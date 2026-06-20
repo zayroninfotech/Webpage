@@ -36,28 +36,6 @@ const services = [
     ],
   },
   {
-    id: "hrms",
-    icon: Database,
-    title: "HRMS Portal Product",
-    subtitle: "End-to-End HR Operations",
-    description:
-      "Digitize and streamline your HR processes with our modern HRMS platform built for growing enterprises.",
-    features: [
-      "Employee lifecycle management",
-      "Attendance & leave tracking",
-      "Payroll & compliance",
-      "Performance management",
-      "Document management",
-      "Employee self-service portal",
-    ],
-    benefits: [
-      "Centralized HR operations",
-      "Improved operational efficiency",
-      "Compliance-ready processes",
-      "Real-time analytics",
-    ],
-  },
-  {
     id: "csv",
     icon: Shield,
     title: "Computer System Validation (CSV)",

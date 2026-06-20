@@ -9,7 +9,6 @@ const footerLinks = {
   ],
   services: [
     { name: "IT & Non-IT Staffing Solutions", path: "/services" },
-    { name: "HRMS Application", path: "/services" },
     { name: "CSV & Regulatory Compliance", path: "/services" },
     { name: "Quality Assurance & Testing", path: "/services" },
   ],

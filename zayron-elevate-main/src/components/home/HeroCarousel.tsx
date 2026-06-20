@@ -101,25 +101,25 @@ export const HeroCarousel = () => {
       <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-yellow-600/10 rounded-full blur-3xl animate-pulse pointer-events-none" style={{ animationDelay: "1s" }} />
 
       {/* Content */}
-      <div className="relative z-10 h-full flex items-center justify-center text-center">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="mx-auto max-w-[860px]">
+      <div className="relative z-10 h-full flex items-center justify-center text-center pt-20">
+        <div className="container mx-auto px-6 lg:px-16">
+          <div className="mx-auto max-w-[800px] flex flex-col items-center">
 
             {/* Badge */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={`badge-${current}`}
-                initial={{ opacity: 0, y: 12 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.5 }}
-                className="mb-6 inline-flex items-center gap-3"
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.4 }}
+                className="mb-5 inline-flex items-center gap-3"
               >
-                <span className="h-px w-10 bg-gradient-to-r from-transparent to-amber-400" />
-                <span className="px-5 py-2 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-[11px] tracking-[0.2em] uppercase font-bold backdrop-blur-sm shadow-[0_0_20px_rgba(251,191,36,0.15)]">
+                <span className="h-px w-8 bg-amber-400/60" />
+                <span className="px-4 py-1.5 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-[11px] tracking-[0.18em] uppercase font-bold backdrop-blur-sm">
                   {slides[current].badge}
                 </span>
-                <span className="h-px w-10 bg-gradient-to-l from-transparent to-amber-400" />
+                <span className="h-px w-8 bg-amber-400/60" />
               </motion.div>
             </AnimatePresence>
 
@@ -127,72 +127,53 @@ export const HeroCarousel = () => {
             <AnimatePresence mode="wait">
               <motion.h1
                 key={`title-${current}`}
-                initial={{ opacity: 0, y: 32 }}
+                initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -16 }}
+                exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-white text-4xl md:text-5xl xl:text-[64px] font-extrabold leading-[1.1] mb-5 tracking-tight"
+                className="text-white font-extrabold tracking-tight leading-[1.08] mb-4"
                 style={{
-                  fontFamily: "'Plus Jakarta Sans', serif",
-                  textShadow: "0 4px 30px rgba(0,0,0,0.6)",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontSize: "clamp(2rem, 5vw, 3.8rem)",
+                  textShadow: "0 4px 32px rgba(0,0,0,0.7)",
                 }}
               >
                 {slides[current].title}
               </motion.h1>
             </AnimatePresence>
 
+            {/* Divider */}
+            <div className="w-14 h-[2px] bg-gradient-to-r from-amber-500 to-yellow-300 rounded-full mb-4" />
+
             {/* Subtitle */}
             <AnimatePresence mode="wait">
               <motion.p
                 key={`sub-${current}`}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-amber-400 font-bold tracking-[0.15em] uppercase text-xs md:text-sm mb-5"
+                transition={{ duration: 0.4, delay: 0.2 }}
+                className="text-amber-400 font-semibold tracking-[0.14em] uppercase text-[11px] md:text-xs mb-5"
               >
-                — {slides[current].subtitle} —
+                {slides[current].subtitle}
               </motion.p>
             </AnimatePresence>
-
-            {/* Divider */}
-            <div className="w-16 h-0.5 bg-gradient-to-r from-amber-400 to-yellow-300 mx-auto mb-6 rounded-full" />
 
             {/* Description */}
             <AnimatePresence mode="wait">
               <motion.p
                 key={`desc-${current}`}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="mx-auto text-white/70 text-base md:text-lg leading-relaxed mb-10 max-w-[600px]"
-                style={{ fontFamily: "'Inter', sans-serif" }}
+                transition={{ duration: 0.4, delay: 0.3 }}
+                className="text-white/65 leading-relaxed max-w-[560px] mx-auto"
+                style={{ fontFamily: "'Inter', sans-serif", fontSize: "clamp(0.9rem, 1.5vw, 1.05rem)" }}
               >
                 {slides[current].description}
               </motion.p>
             </AnimatePresence>
 
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="flex flex-wrap justify-center items-center gap-5"
-            >
-              <Link to="/services">
-                <Button variant="heroGold" size="hero">
-                  Explore Our Services
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-              <Link to="/contact">
-                <Button variant="heroWhite" size="hero">
-                  Contact Us
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-            </motion.div>
           </div>
         </div>
       </div>

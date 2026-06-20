@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, Mail, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/hero-303.jpeg";
+const logo = "/Main_login.png";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -52,22 +52,18 @@ export const Navbar = () => {
 
               {/* ── LOGO ── */}
               <Link to="/" className="flex items-center gap-3 shrink-0 group">
-                <div className="relative w-[46px] h-[46px]">
-                  <div className="absolute inset-0 rounded-full bg-amber-400/20 blur-md scale-110 opacity-0 group-hover:opacity-100 transition-all duration-300" />
-                  <img
-                    src={logo}
-                    alt="Zayron"
-                    className="relative w-full h-full rounded-full object-cover ring-[2px] ring-amber-400/40 group-hover:ring-amber-400/80 transition-all duration-300"
-                  />
-                </div>
-                <div>
-                  <div className="text-[15px] font-black tracking-[0.12em] leading-none bg-gradient-to-r from-amber-400 to-yellow-300 bg-clip-text text-transparent">
-                    ZAYRON
-                  </div>
-                  <div className="text-[9px] font-semibold tracking-[0.3em] text-white/40 uppercase leading-none mt-0.5">
-                    Infotech
-                  </div>
-                </div>
+                <img
+                  src={logo}
+                  alt="Zayron"
+                  className="h-12 w-auto object-contain"
+                  style={{ mixBlendMode: "lighten", filter: "brightness(1.05) contrast(1.1)" }}
+                />
+                <span
+                  className="text-[20px] text-amber-400"
+                  style={{ fontFamily: "'Bodoni MT', 'Bodoni 72', 'Didot', 'Book Antiqua', 'Palatino Linotype', serif", fontWeight: 700, letterSpacing: "0.04em" }}
+                >
+                  Zayron Infotech
+                </span>
               </Link>
 
               {/* ── CENTER NAV — pill container ── */}

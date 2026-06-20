@@ -13,20 +13,6 @@ const services = [
     features: ["Contract Hiring", "Permanent Placement", "Resource Augmentation"],
   },
   {
-    icon: Database,
-    title: "HRMS Application",
-    description:
-      "A powerful, ready-to-deploy HRMS application designed to digitize and simplify end-to-end human resource operations for modern organizations.",
-    features: [
-      "Employee Lifecycle Management",
-      "Payroll & Statutory Compliance",
-      "Performance & Appraisal Management",
-      "Attendance & Leave Management",
-      "Role-Based Access Control",
-      "Employee Self-Service Portal",
-    ],
-  },
-  {
     icon: Shield,
     title: "CSV & Compliance Consulting",
     description:
