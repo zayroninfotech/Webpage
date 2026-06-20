@@ -29,10 +29,13 @@ const buttonVariants = cva(
 
         /* ---------------- Enterprise / Hero ---------------- */
         heroGold:
-          "border-2 border-amber-400 text-amber-400 bg-transparent hover:bg-amber-400/10 hover:shadow-[0_0_30px_rgba(251,191,36,0.35)]",
+          "relative overflow-hidden bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-bold shadow-[0_4px_24px_rgba(251,191,36,0.4)] hover:shadow-[0_6px_36px_rgba(251,191,36,0.6)] hover:scale-[1.03] active:scale-100 transition-all duration-300 before:absolute before:inset-0 before:bg-white/20 before:opacity-0 hover:before:opacity-100 before:transition-opacity",
 
         heroWhite:
-          "border-2 border-white text-white bg-transparent hover:bg-white/10 hover:shadow-[0_0_30px_rgba(255,255,255,0.25)]",
+          "relative overflow-hidden bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold hover:bg-white/20 hover:border-white/50 hover:scale-[1.03] active:scale-100 shadow-[0_4px_20px_rgba(255,255,255,0.1)] hover:shadow-[0_6px_30px_rgba(255,255,255,0.2)] transition-all duration-300",
+
+        heroOutline:
+          "border-2 border-amber-400/60 text-amber-400 bg-transparent hover:bg-amber-400/10 hover:border-amber-400 hover:shadow-[0_0_24px_rgba(251,191,36,0.25)] transition-all duration-300",
 
         /* ---------------- Corporate (Optional) ---------------- */
         corporate:
@@ -47,11 +50,7 @@ const buttonVariants = cva(
         sm: "h-9 px-4 text-sm rounded-md",
         lg: "h-12 px-8 text-base rounded-lg",
         xl: "h-14 px-10 text-lg rounded-xl",
-
-        /* 🔥 Hero Size (Matches Your Screenshot) */
-        hero:
-          "h-[68px] px-10 text-lg rounded-full tracking-wide",
-        
+        hero: "h-[60px] px-10 text-base rounded-full tracking-wide",
         icon: "h-10 w-10 rounded-lg",
       },
     },

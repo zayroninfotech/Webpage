@@ -22,7 +22,10 @@ const footerLinks = {
 
 export const Footer = () => {
   return (
-    <footer className="bg-black text-white">
+    <footer className="bg-black text-white relative">
+      {/* Gold gradient top line */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-amber-400/50 to-transparent" />
+
       {/* Main Footer */}
       <div className="container mx-auto px-4 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
