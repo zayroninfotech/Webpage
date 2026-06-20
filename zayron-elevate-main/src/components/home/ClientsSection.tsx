@@ -43,17 +43,18 @@ export const ClientsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="flex flex-col items-center gap-4"
+              className="flex flex-col items-center gap-4 group"
             >
-              {/* White logo card */}
-              <div className="group flex items-center justify-center bg-white hover:scale-[1.03] border-2 border-transparent hover:border-amber-400/40 rounded-2xl p-6 w-full h-36 transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-amber-500/10">
+              {/* Logo with no card */}
+              <div className="flex items-center justify-center w-full h-32 px-8">
                 <img
                   src={client.logo}
                   alt={client.name}
-                  className="max-h-20 max-w-[180px] w-auto object-contain"
+                  className="max-h-20 max-w-[200px] w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                  style={{ mixBlendMode: "screen" }}
                 />
               </div>
-              {/* Name below card in white */}
+              {/* Name below in white */}
               <p className="text-white text-sm font-semibold text-center leading-snug">{client.name}</p>
             </motion.div>
           ))}
