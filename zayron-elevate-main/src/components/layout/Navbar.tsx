@@ -92,7 +92,7 @@ export const Navbar = () => {
                         )}
                         <span className={cn(
                           "relative z-10 transition-colors duration-200",
-                          isActive ? "text-black font-bold" : "text-white/65 group-hover:text-white"
+                          isActive ? "text-black font-bold" : "text-white group-hover:text-white"
                         )}>
                           {link.name}
                         </span>
