@@ -4,6 +4,7 @@ import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
 const footerLinks = {
   company: [
     { name: "About Us", path: "/about" },
+    { name: "Projects & Products", path: "/projects" },
     { name: "Why Choose Us", path: "/why-choose-us" },
     { name: "Contact", path: "/contact" },
   ],
