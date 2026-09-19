@@ -197,3 +197,35 @@ Caused by:
 [2m4:48:09 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
 [2m4:48:38 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
 [2m4:49:06 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m5:22:27 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m5:22:36 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m5:22:47 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m5:23:22 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m5:25:17 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m5:25:25 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m5:25:47 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m5:27:10 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m5:27:14 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+node:internal/fs/watchers:321
+    const error = new UVException({
+                  ^
+
+Error: EBUSY: resource busy or locked, watch 'C:\Github\Webpage\zayron-elevate-main\src\assets\ai-powered-card.png'
+    at FSWatcher.<computed> (node:internal/fs/watchers:321:19)
+    at Object.watch (node:fs:2548:36)
+    at createFsWatchInstance (file:///C:/Github/Webpage/zayron-elevate-main/node_modules/vite/dist/node/chunks/config.js:12942:16)
+    at setFsWatchListener (file:///C:/Github/Webpage/zayron-elevate-main/node_modules/vite/dist/node/chunks/config.js:12984:14)
+    at NodeFsHandler$1._watchWithNodeFs (file:///C:/Github/Webpage/zayron-elevate-main/node_modules/vite/dist/node/chunks/config.js:13098:20)
+    at NodeFsHandler$1._handleFile (file:///C:/Github/Webpage/zayron-elevate-main/node_modules/vite/dist/node/chunks/config.js:13142:24)
+    at NodeFsHandler$1._addToNodeFs (file:///C:/Github/Webpage/zayron-elevate-main/node_modules/vite/dist/node/chunks/config.js:13316:26)
+Emitted 'error' event on FSWatcher instance at:
+    at FSWatcher._handleError (file:///C:/Github/Webpage/zayron-elevate-main/node_modules/vite/dist/node/chunks/config.js:14117:148)
+    at NodeFsHandler$1._addToNodeFs (file:///C:/Github/Webpage/zayron-elevate-main/node_modules/vite/dist/node/chunks/config.js:13321:18) {
+  errno: -4082,
+  syscall: 'watch',
+  code: 'EBUSY',
+  path: 'C:\\Github\\Webpage\\zayron-elevate-main\\src\\assets\\ai-powered-card.png',
+  filename: 'C:\\Github\\Webpage\\zayron-elevate-main\\src\\assets\\ai-powered-card.png'
+}
+
+Node.js v24.18.0
