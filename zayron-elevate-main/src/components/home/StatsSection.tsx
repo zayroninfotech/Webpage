@@ -1,30 +1,29 @@
 import { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { TrendingUp, Users, Building2, Award } from "lucide-react";
-import statsBg from "@/assets/hero101.avif";
-import overlayImg from "@/assets/hero1011.jpg";
+import { Cpu, Layers, Building2, Award } from "lucide-react";
+import statsBg from "@/assets/stats-bg.png";
 
 const stats = [
   {
-    icon: TrendingUp,
-    value: 1,
+    icon: Cpu,
+    value: 50,
     suffix: "+",
-    label: "Years of Experience",
-    description: "Delivering excellence since day one",
+    label: "AI Tools",
+    description: "AI-powered solutions built for smarter business workflows",
   },
   {
-    icon: Users,
-    value: 20,
+    icon: Layers,
+    value: 10,
     suffix: "+",
-    label: "IT Professionals",
-    description: "Skilled experts across domains",
+    label: "Internal Products",
+    description: "Applications built for enterprise use",
   },
   {
     icon: Building2,
-    value: 8,
+    value: 20,
     suffix: "+",
-    label: "Enterprise Clients",
-    description: "Trusted by leading organizations",
+    label: "Industries Served",
+    description: "IT, Pharma, Power, Manufacturing & more",
   },
   {
     icon: Award,
@@ -48,7 +47,7 @@ const Counter = ({
 
   useEffect(() => {
     if (!inView) return;
-    const duration = 1800;
+    const duration = 1600;
     const steps = 60;
     const increment = value / steps;
     let current = 0;
@@ -69,83 +68,97 @@ const Counter = ({
 
 export const StatsSection = () => {
   const ref = useRef<HTMLDivElement | null>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} className="relative py-24 lg:py-32 overflow-hidden">
+    <section ref={ref} className="relative py-16 lg:py-20 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${statsBg})` }} />
-      <div className="absolute inset-0 bg-black/85" />
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-black/70 to-amber-900/40" />
-
-      {/* Decorative side image */}
       <div
-        className="absolute right-0 top-0 h-full w-1/3 bg-cover bg-center opacity-10 hidden xl:block"
-        style={{ backgroundImage: `url(${overlayImg})` }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${statsBg})` }}
       />
-      <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-transparent to-black hidden xl:block" />
+      <div className="absolute inset-0 bg-[#0a0a0a]/90" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/95 via-transparent to-[#0a0a0a]/80" />
 
-      {/* Gold horizontal lines */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-400/40 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-400/40 to-transparent" />
+      {/* Red accent lines */}
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-red-500/50 to-transparent" />
+      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-red-500/30 to-transparent" />
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.5 }}
+          className="text-center mb-10"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-400/20 text-amber-400 text-xs tracking-widest uppercase font-medium mb-5">
+          <span className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase font-semibold text-red-500 mb-3">
+            <span className="w-4 h-px bg-red-500" />
             Our Impact
+            <span className="w-4 h-px bg-red-500" />
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Driving Business Success
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-tight">
+            Our Impact in Numbers
           </h2>
-          <p className="font-sans text-white/70 text-base md:text-lg max-w-2xl mx-auto">
-            Numbers that reflect our commitment to excellence and long-term client satisfaction
+          <p className="text-white/45 text-sm mt-2 max-w-lg mx-auto leading-relaxed">
+            We combine AI, enterprise technology, quality, security, and digital expertise to deliver scalable solutions that address complex business needs and accelerate digital transformation.
           </p>
         </motion.div>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        {/* Stats Grid — compact cards */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.12 }}
-              className="relative group text-center bg-black/40 backdrop-blur-sm rounded-2xl p-8 border border-amber-500/20 hover:border-amber-400/50 transition-all duration-400 overflow-hidden"
+              transition={{ duration: 0.45, delay: index * 0.08 }}
+              className="group relative rounded-xl p-5 text-center overflow-hidden cursor-default"
+              style={{
+                background: "rgba(255,255,255,0.04)",
+                border: "1px solid rgba(255,255,255,0.07)",
+              }}
             >
-              {/* Card glow on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/0 to-amber-500/0 group-hover:from-amber-500/5 group-hover:to-yellow-600/5 transition-all duration-500 rounded-2xl" />
-              <div className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "linear-gradient(135deg, rgba(251,191,36,0.15) 0%, transparent 60%)" }} />
+              {/* Hover top red line */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[2px] w-0 group-hover:w-4/5 transition-all duration-400 rounded-full bg-red-500" />
+
+              {/* Hover glow */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none rounded-xl"
+                style={{ background: "radial-gradient(ellipse at 50% -10%, rgba(230,57,70,0.12) 0%, transparent 70%)" }}
+              />
 
               {/* Icon */}
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/20 mb-6 group-hover:scale-110 group-hover:bg-amber-500/20 transition-all duration-300">
-                <stat.icon className="w-7 h-7 text-amber-400" />
+              <div
+                className="inline-flex items-center justify-center w-10 h-10 rounded-lg mb-4 border border-red-500/20 group-hover:border-red-500/40 group-hover:scale-105 transition-all duration-300"
+                style={{ background: "rgba(230,57,70,0.07)" }}
+              >
+                <stat.icon className="w-5 h-5 text-red-400" strokeWidth={1.5} />
               </div>
 
-              {/* Value */}
-              <div className="mb-2 font-mono tabular-nums text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+              {/* Number */}
+              <div
+                className="font-bold text-white leading-none mb-1 tabular-nums"
+                style={{ fontSize: "clamp(2rem, 4vw, 2.75rem)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+              >
                 <Counter value={stat.value} suffix={stat.suffix} inView={isInView} />
               </div>
 
               {/* Label */}
-              <h3 className="font-sans font-semibold text-white text-base md:text-lg mb-1">
+              <p className="text-white/90 font-semibold text-[13px] mb-1 tracking-wide">
                 {stat.label}
-              </h3>
+              </p>
 
               {/* Description */}
-              <p className="font-sans text-white/50 text-sm leading-relaxed">
+              <p className="text-white/35 text-[11px] leading-snug">
                 {stat.description}
               </p>
 
-              {/* Bottom accent line */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-amber-400 group-hover:w-3/4 transition-all duration-500 rounded-full" />
+              {/* Bottom red line on hover */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-px w-0 group-hover:w-3/4 transition-all duration-400 bg-red-500/40" />
             </motion.div>
           ))}
         </div>

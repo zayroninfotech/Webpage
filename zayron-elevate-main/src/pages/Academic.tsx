@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { PageHero } from "@/components/layout/PageHero";
 import { Button } from "@/components/ui/button";
 import {
   GraduationCap,
@@ -65,42 +66,20 @@ const benefits = [
 
 const Academic = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-white text-[#111111]">
       <Navbar />
 
       <main>
-        {/* HERO */}
-        <section className="relative pt-32 pb-24 text-center overflow-hidden">
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${academicBg})` }}
-          />
-          <div className="absolute inset-0 bg-black/80" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-amber-900/50" />
-
-          <div className="container mx-auto px-4 relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="max-w-3xl mx-auto"
-            >
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                Academic Engagement
-              </h1>
-
-              <div className="w-20 h-1 bg-amber-400 mx-auto mb-6 rounded-full" />
-
-              <p className="font-sans text-white/75 text-base md:text-lg leading-relaxed">
-                Bridging the gap between academic learning and industry excellence
-                through structured programs and professional training.
-              </p>
-            </motion.div>
-          </div>
-        </section>
+        <PageHero
+          title="Academic Engagement"
+          description="Bridging the gap between academic learning and industry excellence through structured programs and professional training."
+          bgImage={academicBg}
+          badge="Education & Training"
+          breadcrumbs={[{ label: "Academic" }]}
+        />
 
         {/* INTRO + BENEFITS */}
-        <section className="py-20 lg:py-28 bg-black">
+        <section className="py-20 lg:py-28 bg-white">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               <motion.div
@@ -109,11 +88,11 @@ const Academic = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
               >
-                <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">
-                  Industry–Academia Collaboration
+                <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#111111] mb-6">
+                  Industry&ndash;Academia Collaboration
                 </h2>
 
-                <div className="space-y-4 font-sans text-white/70 leading-relaxed">
+                <div className="space-y-4 font-sans text-slate-600 leading-relaxed">
                   <p>
                     Zayron Infotech collaborates with educational institutions
                     to align academic learning with real-world industry needs.
@@ -133,7 +112,7 @@ const Academic = () => {
                     <Button
                       variant="heroOutline"
                       size="lg"
-                      className="border-amber-400 text-amber-400 hover:bg-amber-400/10"
+                      className="border-orange-400 text-orange-400 hover:bg-orange-400/10"
                     >
                       Partner With Us
                       <ArrowRight size={18} />
@@ -147,17 +126,17 @@ const Academic = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="bg-black/60 rounded-2xl p-8 border border-amber-500/20"
+                className="bg-slate-50 rounded-2xl p-8 border border-slate-200 shadow-sm"
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-14 h-14 rounded-xl bg-amber-500/10 flex items-center justify-center">
-                    <Users className="w-7 h-7 text-amber-400" />
+                  <div className="w-14 h-14 rounded-xl bg-orange-50 flex items-center justify-center">
+                    <Users className="w-7 h-7 text-orange-600" />
                   </div>
                   <div>
-                    <h3 className="font-serif text-xl font-bold">
+                    <h3 className="font-serif text-xl font-bold text-[#111111]">
                       Why Choose Us
                     </h3>
-                    <p className="font-sans text-white/60 text-sm">
+                    <p className="font-sans text-slate-500 text-sm">
                       Student-focused benefits
                     </p>
                   </div>
@@ -166,8 +145,8 @@ const Academic = () => {
                 <div className="space-y-3">
                   {benefits.map((benefit) => (
                     <div key={benefit} className="flex gap-3">
-                      <CheckCircle className="w-5 h-5 text-amber-400 mt-0.5" />
-                      <span className="font-sans text-white/70 text-sm">
+                      <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5" />
+                      <span className="font-sans text-slate-600 text-sm">
                         {benefit}
                       </span>
                     </div>
@@ -179,14 +158,14 @@ const Academic = () => {
         </section>
 
         {/* PROGRAMS */}
-        <section className="py-20 lg:py-28 bg-black/95">
+        <section className="py-20 lg:py-28 bg-slate-50">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-[#111111] mb-4">
                 Our Programs
               </h2>
-              <div className="w-20 h-1 bg-amber-400 mx-auto mb-6 rounded-full" />
-              <p className="font-sans text-white/70 text-lg max-w-2xl mx-auto">
+              <div className="w-20 h-1 bg-orange-500 mx-auto mb-6 rounded-full" />
+              <p className="font-sans text-slate-600 text-lg max-w-2xl mx-auto">
                 Structured learning paths designed for real-world readiness
               </p>
             </div>
@@ -199,17 +178,17 @@ const Academic = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-black/60 rounded-2xl p-8 border border-amber-500/20 hover:border-amber-500/40 transition-all"
+                  className="bg-white rounded-2xl p-8 border border-slate-200 hover:border-orange-400/50 shadow-sm hover:shadow-md transition-all"
                 >
-                  <div className="w-14 h-14 rounded-xl bg-amber-500/10 flex items-center justify-center mb-6">
-                    <program.icon className="w-7 h-7 text-amber-400" />
+                  <div className="w-14 h-14 rounded-xl bg-orange-50 flex items-center justify-center mb-6">
+                    <program.icon className="w-7 h-7 text-orange-600" />
                   </div>
 
-                  <h3 className="font-serif text-xl font-bold mb-3">
+                  <h3 className="font-serif text-xl font-bold text-[#111111] mb-3">
                     {program.title}
                   </h3>
 
-                  <p className="font-sans text-white/70 mb-6 leading-relaxed">
+                  <p className="font-sans text-slate-600 mb-6 leading-relaxed">
                     {program.description}
                   </p>
 
@@ -217,9 +196,9 @@ const Academic = () => {
                     {program.features.map((feature) => (
                       <li
                         key={feature}
-                        className="flex items-center gap-2 text-sm text-white/70"
+                        className="flex items-center gap-2 text-sm text-slate-600"
                       >
-                        <div className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-orange-400" />
                         {feature}
                       </li>
                     ))}
@@ -231,16 +210,16 @@ const Academic = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-20 lg:py-28 bg-black">
+        <section className="py-20 lg:py-28 bg-white">
           <div className="container mx-auto px-4 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-gradient-to-r from-black via-black/90 to-amber-900/70 rounded-3xl p-10 lg:p-16 text-center border border-amber-500/20"
+              className="bg-gradient-to-r from-[#111111] via-[#1a1a2e] to-orange-900/80 rounded-3xl p-10 lg:p-16 text-center border border-orange-500/30"
             >
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
                 Start Your Journey Today
               </h2>
 
@@ -253,7 +232,7 @@ const Academic = () => {
                 <Button
                   variant="heroOutline"
                   size="xl"
-                  className="border-amber-400 text-amber-400 hover:bg-amber-400/10"
+                  className="border-orange-400 text-orange-400 hover:bg-orange-400/10"
                 >
                   Get Started
                   <ArrowRight size={20} />

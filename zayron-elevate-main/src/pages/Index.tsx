@@ -6,13 +6,15 @@ import { ServicesPreview } from "@/components/home/ServicesPreview";
 import { PromoSection } from "@/components/home/PromoSection";
 import { CTASection } from "@/components/home/CTASection";
 import { ClientsSection } from "@/components/home/ClientsSection";
+import { CapabilityStrip } from "@/components/home/CapabilityStrip";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Navbar />
       <main>
         <HeroCarousel />
+        <CapabilityStrip />
         <StatsSection />
         <ServicesPreview />
         <PromoSection />

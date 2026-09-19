@@ -1,0 +1,199 @@
+npm notice run vite_react_shadcn_ts@0.0.0 dev
+npm notice run vite
+
+  [32m[1mVITE[22m v7.3.1[39m  [2mready in [0m[1m513[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m8080[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://169.254.102.46:[1m8080[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.29.180:[1m8080[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://172.17.16.1:[1m8080[22m/[39m
+[2m[32m  ➜[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
+Browserslist: browsers data (caniuse-lite) is 15 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+[2m10:42:29 am[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error:   x Expected '</', got 'jsx text (
+  |           )'
+     ,-[C:/Github/Webpage/zayron-elevate-main/src/pages/About.tsx:128:1]
+ 125 |                       Expertise Together
+ 126 |                     </span>
+ 127 |                   </motion.div>
+ 128 | ,->             </motion.div>
+ 129 | `->           </div>
+ 130 |             </section>
+ 131 |     
+ 131 |             {/* CONTENT-STATS */}
+     `----
+
+
+Caused by:
+    Syntax Error
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Github/Webpage/zayron-elevate-main/src/pages/About.tsx[39m
+[2m10:42:30 am[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected '</', got 'jsx text (
+  |           )'
+     ,-[C:/Github/Webpage/zayron-elevate-main/src/pages/About.tsx:128:1]
+ 125 |                       Expertise Together
+ 126 |                     </span>
+ 127 |                   </motion.div>
+ 128 | ,->             </motion.div>
+ 129 | `->           </div>
+ 130 |             </section>
+ 131 |     
+ 131 |             {/* CONTENT-STATS */}
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Github/Webpage/zayron-elevate-main/src/pages/About.tsx[39m
+  
+[2m10:47:06 am[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected '</', got 'jsx text (
+  |           )'
+     ,-[C:/Github/Webpage/zayron-elevate-main/src/pages/About.tsx:128:1]
+ 125 |                       Expertise Together
+ 126 |                     </span>
+ 127 |                   </motion.div>
+ 128 | ,->             </motion.div>
+ 129 | `->           </div>
+ 130 |             </section>
+ 131 |     
+ 131 |             {/* CONTENT-STATS */}
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Github/Webpage/zayron-elevate-main/src/pages/About.tsx[39m
+  
+[2m10:48:12 am[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m1:48:54 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m2:28:15 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m2:39:01 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m2:44:42 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m2:46:41 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m2:46:41 pm[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected '</', got 'jsx text (
+  |
+  |               )'
+     ,-[C:/Github/Webpage/zayron-elevate-main/src/pages/About.tsx:161:1]
+ 158 |                     >
+ 159 |                       Learn More About Us <ArrowRight size={16} />
+ 160 |                     </Link>
+ 161 | ,->               </motion.div>
+ 162 | |   
+ 163 | `->               {/* STATS */}
+ 164 |                   <motion.div
+ 165 |                     initial={{ opacity: 0, x: 40 }}
+ 165 |                     whileInView={{ opacity: 1, x: 0 }}
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Github/Webpage/zayron-elevate-main/src/pages/About.tsx[39m
+  
+[2m2:48:20 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m2:48:20 pm[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected '</', got 'jsx text (
+  |
+  |               )'
+     ,-[C:/Github/Webpage/zayron-elevate-main/src/pages/About.tsx:161:1]
+ 158 |                     >
+ 159 |                       Learn More About Us <ArrowRight size={16} />
+ 160 |                     </Link>
+ 161 | ,->               </motion.div>
+ 162 | |   
+ 163 | `->               {/* STATS */}
+ 164 |                   <motion.div
+ 165 |                     initial={{ opacity: 0, x: 40 }}
+ 165 |                     whileInView={{ opacity: 1, x: 0 }}
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Github/Webpage/zayron-elevate-main/src/pages/About.tsx[39m
+  
+[2m2:49:47 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m2:50:07 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m2:59:13 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m2:59:42 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m3:00:14 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m3:00:52 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m3:03:12 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m3:03:12 pm[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected '</', got 'jsx text (
+  |
+  |       )'
+     ,-[C:/Github/Webpage/zayron-elevate-main/src/pages/About.tsx:387:1]
+ 384 |                   ))}
+ 385 |                 </div>
+ 386 |               </div>
+ 387 | ,->         </section>
+ 388 | |   
+ 389 | `->       </main>
+ 390 |     
+ 391 |           <Footer />
+ 391 |         </div>
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Github/Webpage/zayron-elevate-main/src/pages/About.tsx[39m
+  
+[2m3:04:30 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m3:04:30 pm[22m [31m[1m[vite][22m[39m [31mInternal server error:   x Expected '</', got 'jsx text (
+  |           )'
+     ,-[C:/Github/Webpage/zayron-elevate-main/src/pages/About.tsx:468:1]
+ 465 |                       </p>
+ 466 |                     </motion.div>
+ 467 |                   ))}
+ 468 | ,->             </div>
+ 469 | `->           </div>
+ 470 |             </section>
+ 471 |     
+ 471 |           </main>
+     `----
+
+
+Caused by:
+    Syntax Error[39m
+  Plugin: [35mvite:react-swc[39m
+  File: [36mC:/Github/Webpage/zayron-elevate-main/src/pages/About.tsx[39m
+  
+[2m3:05:08 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m3:05:37 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m3:10:37 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m3:11:04 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m3:11:30 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m3:14:35 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m3:25:48 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m3:26:18 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m3:29:44 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m3:30:13 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m3:37:07 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m3:39:08 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m3:44:30 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m3:44:51 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m3:45:19 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m3:46:04 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m3:46:29 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m3:54:50 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m3:55:10 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m3:55:31 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m4:09:00 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m4:09:27 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m4:10:34 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m4:11:00 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m4:11:27 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m4:11:56 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m4:13:33 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m4:19:52 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m4:22:38 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m4:26:07 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m4:48:09 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m4:48:38 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m
+[2m4:49:06 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/About.tsx, /src/index.css[22m

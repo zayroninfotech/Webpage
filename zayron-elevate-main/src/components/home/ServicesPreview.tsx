@@ -1,115 +1,157 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Users, Database, Shield, TestTube, ArrowRight } from "lucide-react";
-import servicesBg from "@/assets/hero-10.avif";
+import { ArrowRight, Code2, ShieldCheck, BrainCircuit, Globe, Check } from "lucide-react";
 
 const services = [
   {
-    icon: Users,
-    title: "IT & Non-IT Talent Solutions",
+    icon: Code2,
+    number: "01",
+    title: "Application Development & Testing",
     description:
-      "We deliver high-quality IT and non-IT professionals through flexible contract and permanent staffing models, aligned to meet your business and operational needs.",
-    features: ["Contract Hiring", "Permanent Placement", "Resource Augmentation"],
+      "Custom web, mobile, API, and enterprise applications with quality-focused development and testing.",
+    features: [
+      "Web & Mobile App Development",
+      "API & System Integration",
+      "UI/UX Design",
+      "QA & Automated Testing",
+    ],
+    iconBg: "bg-red-100",
+    iconColor: "text-red-600",
+    hoverAccent: "rgba(230,57,70,0.07)",
+    topBorder: "from-red-400 to-rose-500",
   },
   {
-    icon: Shield,
-    title: "CSV & Compliance Consulting",
+    icon: ShieldCheck,
+    number: "02",
+    title: "Quality, CSV & Compliance",
     description:
-      "We help organizations reduce compliance risk through structured CSV methodologies and regulatory compliance consulting services.",
+      "End-to-end validation, documentation and compliance support for regulated industries.",
     features: [
-      "GxP Compliance",
-      "Electronic Records & Signatures",
-      "Audit & Inspection Support",
+      "CSV (GAMP 5) & Validation",
+      "21 CFR Part 11 Support",
+      "GxP Compliance (Pharma, Healthcare)",
+      "ISO 9001 & ISO 27001",
+      "Audit & Regulatory Assistance",
     ],
+    iconBg: "bg-blue-100",
+    iconColor: "text-blue-600",
+    hoverAccent: "rgba(59,130,246,0.07)",
+    topBorder: "from-blue-400 to-indigo-500",
   },
   {
-    icon: TestTube,
-    title: "Application Testing Services",
+    icon: BrainCircuit,
+    number: "03",
+    title: "AI-Powered Products",
     description:
-      "Our testing services help organizations improve software quality through structured manual and automated testing methodologies.",
+      "Innovative AI-driven products and intelligent solutions to automate processes, extract insights, and improve business efficiency.",
     features: [
-      "Functional Testing",
-      "Automated Test Frameworks",
-      "Performance Validation",
+      "AI Tools & Automation",
+      "Document Processing",
+      "Data Analytics & Insights",
+      "Custom AI Solutions",
     ],
+    iconBg: "bg-rose-100",
+    iconColor: "text-rose-600",
+    hoverAccent: "rgba(244,63,94,0.07)",
+    topBorder: "from-rose-400 to-red-500",
+  },
+  {
+    icon: Globe,
+    number: "04",
+    title: "Digital Transformation & Cybersecurity",
+    description:
+      "Helping businesses modernize operations with secure, scalable, and future-ready technology solutions.",
+    features: [
+      "Cloud Solutions & Modernization",
+      "Process Automation",
+      "Cybersecurity & Risk Management",
+      "IT Strategy & Consulting",
+    ],
+    iconBg: "bg-emerald-100",
+    iconColor: "text-emerald-600",
+    hoverAccent: "rgba(16,185,129,0.07)",
+    topBorder: "from-emerald-400 to-green-500",
   },
 ];
 
 export const ServicesPreview = () => {
   return (
-    <section className="relative py-24 lg:py-32 bg-black overflow-hidden">
-      {/* Subtle background texture */}
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-5"
-        style={{ backgroundImage: `url(${servicesBg})` }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
+    <section className="relative py-24 lg:py-32 bg-white overflow-hidden">
+      {/* Subtle background accents */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-red-50 rounded-full blur-3xl opacity-60 pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-rose-50 rounded-full blur-3xl opacity-50 pointer-events-none" />
 
-      {/* Glow accents */}
-      <div className="absolute top-20 left-0 w-72 h-72 bg-amber-500/8 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-20 right-0 w-72 h-72 bg-yellow-600/8 rounded-full blur-3xl pointer-events-none" />
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.55 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-400/20 text-amber-400 text-xs tracking-widest uppercase font-medium mb-5">
+          <span className="inline-flex items-center gap-3 px-5 py-1.5 rounded-full bg-red-50 border border-red-200 text-red-600 text-[11px] tracking-[0.2em] uppercase font-semibold mb-5">
+            <span className="w-4 h-px bg-red-400" />
             Our Services
+            <span className="w-4 h-px bg-red-400" />
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Integrated IT & Non-IT Solutions
+          <h2 className="font-bold text-[#111111] mb-4 tracking-tight"
+            style={{ fontSize: "clamp(1.9rem, 4vw, 3rem)" }}>
+            Technology &amp;{" "}
+            <span className="text-red-600">Digital Solutions</span>
           </h2>
-          <p className="font-sans text-white/70 text-base md:text-lg max-w-2xl mx-auto">
-            End-to-end technology and business services designed to enhance efficiency,
-            drive innovation, and support sustainable growth
+          <p className="text-slate-500 text-base max-w-2xl mx-auto leading-relaxed">
+            From intelligent AI products and enterprise applications to quality, security,
+            and digital transformation — solutions built for modern businesses.
           </p>
         </motion.div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {/* Cards Grid */}
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 36 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative bg-black/60 rounded-2xl p-8 border border-amber-500/20 hover:border-amber-400/50 transition-all duration-400 overflow-hidden"
+              transition={{ duration: 0.5, delay: index * 0.09 }}
+              className="group relative bg-white rounded-2xl p-7 border border-slate-200 hover:border-transparent shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
             >
-              {/* Background glow on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/0 to-amber-500/0 group-hover:from-amber-500/5 group-hover:to-transparent transition-all duration-500 rounded-2xl" />
+              {/* Hover inner glow */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"
+                style={{ background: `radial-gradient(ellipse at 30% 0%, ${service.hoverAccent} 0%, transparent 70%)` }}
+              />
 
-              {/* Number badge */}
-              <div className="absolute top-6 right-6 font-mono text-4xl font-bold text-white/5 group-hover:text-amber-400/10 transition-colors duration-300 select-none">
-                {String(index + 1).padStart(2, "0")}
+              {/* Top gradient border on hover */}
+              <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r ${service.topBorder} scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left rounded-t-2xl`} />
+
+              {/* Card number */}
+              <div className="absolute top-5 right-5 font-mono text-4xl font-bold text-slate-100 group-hover:text-slate-150 select-none transition-colors duration-300">
+                {service.number}
               </div>
 
               {/* Icon */}
-              <div className="relative w-14 h-14 rounded-xl bg-gradient-to-br from-amber-500 to-yellow-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-amber-500/30 transition-all duration-300">
-                <service.icon className="w-7 h-7 text-black" />
+              <div className={`relative w-14 h-14 rounded-xl ${service.iconBg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <service.icon className={`w-7 h-7 ${service.iconColor}`} strokeWidth={1.8} />
               </div>
 
               {/* Title */}
-              <h3 className="relative font-serif text-xl font-bold text-white mb-3">
+              <h3 className="font-bold text-[#111111] text-[1rem] mb-3 leading-snug">
                 {service.title}
               </h3>
 
               {/* Description */}
-              <p className="relative font-sans text-white/65 mb-6 leading-relaxed text-sm">
+              <p className="text-slate-500 text-sm leading-relaxed mb-5">
                 {service.description}
               </p>
 
               {/* Features */}
-              <ul className="relative space-y-2 mb-6">
+              <ul className="space-y-2 mb-6">
                 {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2.5 font-sans text-sm text-white/65">
-                    <div className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0" />
+                  <li key={feature} className="flex items-start gap-2.5 text-sm text-slate-600">
+                    <Check className="w-4 h-4 text-red-500 shrink-0 mt-0.5" strokeWidth={2.5} />
                     {feature}
                   </li>
                 ))}
@@ -118,34 +160,34 @@ export const ServicesPreview = () => {
               {/* Learn More */}
               <Link
                 to="/services"
-                className="relative inline-flex items-center gap-2 font-sans text-amber-400 font-medium text-sm group-hover:gap-3 transition-all duration-300"
+                className="inline-flex items-center gap-1.5 text-red-600 font-semibold text-sm group-hover:gap-2.5 transition-all duration-300"
               >
-                Learn More <ArrowRight size={16} />
+                Learn More <ArrowRight size={15} />
               </Link>
 
               {/* Bottom accent line */}
-              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-400 to-yellow-500 group-hover:w-full transition-all duration-500" />
+              <div className={`absolute bottom-0 left-0 h-px w-0 group-hover:w-full bg-gradient-to-r ${service.topBorder} transition-all duration-500`} />
             </motion.div>
           ))}
         </div>
 
-        {/* CTA */}
+        {/* View All CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           className="text-center mt-14"
         >
           <Link to="/services">
-            <Button
-              variant="heroOutline"
-              size="lg"
-              className="border-amber-400 text-amber-400 hover:bg-amber-400/10"
+            <motion.button
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border-2 border-red-500 text-red-600 font-semibold hover:bg-red-500 hover:text-white transition-all duration-250 text-sm"
             >
               View All Services
-              <ArrowRight size={18} />
-            </Button>
+              <ArrowRight size={16} />
+            </motion.button>
           </Link>
         </motion.div>
       </div>

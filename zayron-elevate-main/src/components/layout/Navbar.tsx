@@ -1,18 +1,17 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone, Mail, ChevronRight } from "lucide-react";
+import { Menu, X, Phone, Mail, Home, Send, ChevronRight, Info, Briefcase, GraduationCap, FolderOpen, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
-const logo = "/Main_login.png";
+const logo = "/logo1_cropped.png";
 
 const navLinks = [
-  { name: "Home", path: "/" },
-  { name: "About Us", path: "/about" },
-  { name: "Services", path: "/services" },
-  { name: "Academic", path: "/academic" },
-  { name: "Projects", path: "/projects" },
-  { name: "Why Choose Us", path: "/why-choose-us" },
-  { name: "Contact", path: "/contact" },
+  { name: "Home", path: "/", icon: Home },
+  { name: "About Us", path: "/about", icon: Info },
+  { name: "Services", path: "/services", icon: Briefcase },
+  { name: "Academic", path: "/academic", icon: GraduationCap },
+  { name: "Projects", path: "/projects", icon: FolderOpen },
+  { name: "Why Choose Us", path: "/why-choose-us", icon: Star },
 ];
 
 export const Navbar = () => {
@@ -33,68 +32,77 @@ export const Navbar = () => {
 
   return (
     <>
-      {/* ── MAIN NAVBAR ───────────────────────────────────── */}
+      {/* MAIN NAVBAR */}
       <motion.header
-        initial={{ y: -120 }}
+        initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        transition={{ duration: 0.55, ease: "easeOut" }}
         className="fixed top-0 left-0 right-0 z-50"
       >
+        {/* Top accent bar */}
+        <div className="h-[2px] w-full bg-gradient-to-r from-[#111111] via-orange-500 to-[#111111]" />
+
         <div
           className={cn(
-            "transition-all duration-500",
+            "transition-all duration-400",
             scrolled
-              ? "bg-[#0a0a0a]/98 backdrop-blur-2xl border-b border-amber-500/20 shadow-[0_8px_32px_rgba(0,0,0,0.8)]"
-              : "bg-gradient-to-b from-black/90 to-black/30 backdrop-blur-sm border-b border-white/5"
+              ? "bg-white shadow-[0_8px_32px_rgba(0,0,0,0.10)] border-b border-slate-200"
+              : "bg-white border-b border-slate-100 shadow-sm"
           )}
         >
           <nav className="container mx-auto px-4 lg:px-10">
-            <div className="flex items-center h-[70px] gap-8">
+            <div className="flex items-center h-[84px] gap-4">
 
-              {/* ── LOGO ── */}
-              <Link to="/" className="flex items-center gap-3 shrink-0 group">
-                <img
+              {/* LOGO */}
+              <Link to="/" className="flex items-center gap-2 shrink-0 group mr-2">
+                <motion.img
                   src={logo}
                   alt="Zayron"
-                  className="h-12 w-auto object-contain"
-                  style={{ mixBlendMode: "lighten", filter: "brightness(1.05) contrast(1.1)" }}
+                  className="h-[68px] w-auto object-contain"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
                 />
-                <span
-                  className="text-[20px] text-amber-400"
-                  style={{ fontFamily: "'Bodoni MT', 'Bodoni 72', 'Didot', 'Book Antiqua', 'Palatino Linotype', serif", fontWeight: 700, letterSpacing: "0.04em" }}
-                >
-                  Zayron Infotech
-                </span>
+<div className="flex flex-col leading-tight">
+                  <span
+                    className="text-[19px] leading-none whitespace-nowrap"
+                    style={{ fontFamily: "'Bodoni MT', 'Bodoni 72', 'Didot', serif", fontWeight: 700, letterSpacing: "0.04em" }}
+                  >
+                    <span className="text-[#111111]">Zayron</span>{" "}
+                    <span style={{ color: "#E63946" }}>Infotech</span>
+                  </span>
+                  <span className="hidden xl:block text-[9px] text-slate-400 tracking-[0.14em] uppercase font-medium mt-0.5 whitespace-nowrap">
+                    Products &middot; Technology &middot; Business Solutions
+                  </span>
+                </div>
               </Link>
 
-              {/* ── CENTER NAV — pill container ── */}
+              {/* CENTER NAV */}
               <div className="hidden lg:flex flex-1 items-center justify-center">
-                <div className={cn(
-                  "flex items-center gap-0.5 rounded-full px-2 py-1.5 transition-all duration-500",
-                  scrolled
-                    ? "bg-white/5 border border-white/8"
-                    : "bg-black/30 border border-white/10"
-                )}>
+                <div className="flex items-center gap-0.5">
                   {navLinks.map((link) => {
                     const isActive = location.pathname === link.path;
+                    const Icon = link.icon;
                     return (
                       <Link
                         key={link.path}
                         to={link.path}
-                        className="relative px-4 py-1.5 rounded-full text-[13px] font-medium transition-all duration-200 group"
+                        className="relative px-2.5 py-1.5 rounded-full text-[12px] font-medium transition-colors duration-200 group whitespace-nowrap"
                       >
-                        {/* Active background pill */}
                         {isActive && (
                           <motion.span
                             layoutId="nav-pill"
-                            className="absolute inset-0 rounded-full bg-gradient-to-r from-amber-500 to-yellow-400"
+                            className="absolute inset-0 rounded-full bg-gradient-to-r from-red-600 to-red-500"
+                            style={{
+                              boxShadow: "0 0 16px rgba(220,38,38,0.4), 0 0 32px rgba(220,38,38,0.15)",
+                            }}
                             transition={{ type: "spring", stiffness: 380, damping: 30 }}
                           />
                         )}
                         <span className={cn(
-                          "relative z-10 transition-colors duration-200",
-                          isActive ? "text-black font-bold" : "text-white group-hover:text-white"
+                          "relative z-10 flex items-center gap-1.5 transition-colors duration-200",
+                          isActive ? "text-white font-bold" : "text-[#111111] hover:text-orange-500"
                         )}>
+                          {Icon && <Icon size={12} strokeWidth={2.5} />}
                           {link.name}
                         </span>
                       </Link>
@@ -103,20 +111,31 @@ export const Navbar = () => {
                 </div>
               </div>
 
+              {/* GET IN TOUCH BUTTON */}
+              <Link to="/contact" className="hidden lg:block shrink-0">
+                <motion.span
+                  whileHover={{ scale: 1.04, y: -1 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-red-600 to-orange-500 text-white text-[12px] font-bold shadow-md shadow-orange-500/25 hover:shadow-orange-500/40 transition-shadow duration-200 cursor-pointer"
+                >
+                  <Send size={12} strokeWidth={2.5} />
+                  Get In Touch
+                </motion.span>
+              </Link>
 
-              {/* ── MOBILE BUTTON ── */}
+              {/* MOBILE BUTTON */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden ml-auto w-9 h-9 flex items-center justify-center rounded-lg border border-white/10 text-white hover:bg-white/5 transition-all"
+                className="lg:hidden ml-auto w-9 h-9 flex items-center justify-center rounded-lg border border-slate-200 text-[#111111] hover:bg-slate-50 transition-all"
               >
                 <AnimatePresence mode="wait">
                   {isMobileMenuOpen ? (
                     <motion.div key="x" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.15 }}>
-                      <X size={18} />
+                      <X size={17} />
                     </motion.div>
                   ) : (
                     <motion.div key="m" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.15 }}>
-                      <Menu size={18} />
+                      <Menu size={17} />
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -126,28 +145,26 @@ export const Navbar = () => {
         </div>
       </motion.header>
 
-      {/* ── MOBILE MENU ───────────────────────────────────── */}
+      {/* MOBILE MENU */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -8 }}
+            initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
+            exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.25 }}
-            className={cn(
-              "fixed left-0 right-0 z-40 lg:hidden",
-              scrolled ? "top-[70px]" : "top-[80px]"
-            )}
+            className="fixed top-[86px] left-0 right-0 z-40 lg:hidden"
           >
-            <div className="bg-[#0c0c0c]/99 backdrop-blur-2xl border-b border-amber-500/20">
+            <div className="bg-white border-b border-slate-200 shadow-xl">
               <div className="container mx-auto px-4 py-5">
                 <div className="flex flex-col gap-1 mb-4">
                   {navLinks.map((link, i) => {
                     const isActive = location.pathname === link.path;
+                    const Icon = link.icon;
                     return (
                       <motion.div
                         key={link.path}
-                        initial={{ opacity: 0, x: -16 }}
+                        initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: i * 0.04 }}
                       >
@@ -156,29 +173,34 @@ export const Navbar = () => {
                           className={cn(
                             "flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-all",
                             isActive
-                              ? "bg-amber-500/15 text-amber-400 border border-amber-400/25"
-                              : "text-white/65 hover:bg-white/5 hover:text-white"
+                              ? "bg-gradient-to-r from-red-50 to-orange-50 text-red-600 border border-red-200"
+                              : "text-[#111111] hover:bg-slate-50 hover:text-orange-500"
                           )}
                         >
-                          {link.name}
-                          {isActive && <div className="w-2 h-2 rounded-full bg-amber-400" />}
+                          <span className="flex items-center gap-2.5">
+                            {Icon && <Icon size={14} />}
+                            {link.name}
+                          </span>
+                          {isActive
+                            ? <div className="w-2 h-2 rounded-full bg-red-500 animate-ping-slow" />
+                            : <ChevronRight size={14} className="text-slate-300" />
+                          }
                         </Link>
                       </motion.div>
                     );
                   })}
                 </div>
 
-                {/* Mobile contact strip */}
                 <div className="grid grid-cols-2 gap-2">
                   <a
                     href="tel:+919346083979"
-                    className="flex items-center justify-center gap-2 py-2.5 rounded-xl border border-white/10 text-white/60 text-xs font-medium hover:border-amber-400/30 hover:text-amber-400 transition-all"
+                    className="flex items-center justify-center gap-2 py-2.5 rounded-xl border border-slate-200 text-[#111111] text-xs font-medium hover:border-orange-400 hover:text-orange-600 transition-all"
                   >
                     <Phone size={12} /> Call Us
                   </a>
                   <a
                     href="mailto:info@zayron.in"
-                    className="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-amber-500 text-black text-xs font-bold"
+                    className="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gradient-to-r from-red-600 to-orange-500 text-white text-xs font-bold hover:opacity-90 transition-all"
                   >
                     <Mail size={12} /> Email Us
                   </a>

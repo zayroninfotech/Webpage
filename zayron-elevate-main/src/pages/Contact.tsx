@@ -1,7 +1,8 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { PageHero } from "@/components/layout/PageHero";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -17,7 +18,7 @@ const contactInfo = [
     title: "Visit Us",
     details: [
       "1-6-6, Sriram Nagar, Kakinada (Urban),",
-      "Andhra Pradesh – 533003, India",
+      "Andhra Pradesh â€“ 533003, India",
     ],
   },
   {
@@ -85,51 +86,31 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-white text-[#111111]">
       <Navbar />
 
       <main>
-        {/* HERO */}
-        <section className="relative pt-32 pb-24 overflow-hidden text-center">
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${contactBg})` }}
-          />
-          <div className="absolute inset-0 bg-black/80" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-amber-900/50" />
-
-          <div className="container mx-auto px-4 relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="max-w-3xl mx-auto"
-            >
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                Contact Us
-              </h1>
-              <div className="w-24 h-1 bg-amber-400 mx-auto mb-6 rounded-full" />
-              <p className="font-sans text-white/80 text-base md:text-lg leading-relaxed">
-                We'd love to hear from you. Reach out to start a conversation
-                about your future.
-              </p>
-            </motion.div>
-          </div>
-        </section>
+        <PageHero
+          title="Contact Us"
+          description="We'd love to hear from you. Reach out to start a conversation about your future."
+          bgImage={contactBg}
+          badge="Get In Touch"
+          breadcrumbs={[{ label: "Contact" }]}
+        />
 
         {/* CONTACT CONTENT */}
-        <section className="py-20 lg:py-28 bg-black">
+        <section className="py-20 lg:py-28 bg-white">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
 
-              {/* LEFT – INFO */}
+              {/* LEFT â€“ INFO */}
               <motion.div
                 initial={{ opacity: 0, x: -40 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
               >
-                <h2 className="font-serif text-3xl font-bold mb-6 text-amber-400">
+                <h2 className="font-serif text-3xl font-bold mb-6 text-orange-600">
                   Get in Touch
                 </h2>
 
@@ -137,24 +118,24 @@ const Contact = () => {
                   {contactInfo.map((item) => (
                     <div
                       key={item.title}
-                      className="flex gap-4 p-6 bg-black/60 rounded-xl border border-amber-500/20 hover:border-amber-400/40 transition-colors"
+                      className="flex gap-4 p-6 bg-slate-50 rounded-xl border border-slate-200 hover:border-orange-400/50 transition-colors"
                     >
-                      <div className="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center shrink-0">
-                        <item.icon className="w-6 h-6 text-amber-400" />
+                      <div className="w-12 h-12 rounded-lg bg-orange-50 flex items-center justify-center shrink-0">
+                        <item.icon className="w-6 h-6 text-orange-600" />
                       </div>
                       <div>
-                        <h3 className="font-semibold mb-1">{item.title}</h3>
+                        <h3 className="font-semibold text-[#111111] mb-1">{item.title}</h3>
                         {item.details.map((line, i) => (
                           item.href ? (
                             <a
                               key={i}
                               href={item.href[i]}
-                              className="block text-white/60 hover:text-amber-400 text-sm leading-relaxed transition-colors"
+                              className="block text-slate-500 hover:text-orange-600 text-sm leading-relaxed transition-colors"
                             >
                               {line}
                             </a>
                           ) : (
-                            <p key={i} className="text-white/60 text-sm leading-relaxed">
+                            <p key={i} className="text-slate-500 text-sm leading-relaxed">
                               {line}
                             </p>
                           )
@@ -164,33 +145,33 @@ const Contact = () => {
                   ))}
                 </div>
 
-                <div className="bg-amber-500/5 border border-amber-500/20 rounded-xl p-5">
+                <div className="bg-orange-50 border border-orange-200 rounded-xl p-5">
                   <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-amber-400 mt-0.5 shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-orange-600 mt-0.5 shrink-0" />
                     <div>
-                      <p className="font-sans text-white/80 text-sm font-medium mb-1">
+                      <p className="font-sans text-slate-700 text-sm font-medium mb-1">
                         We typically respond within 24 hours
                       </p>
-                      <p className="font-sans text-white/50 text-xs">
-                        Mon – Sat · 9:00 AM – 6:00 PM IST
+                      <p className="font-sans text-slate-400 text-xs">
+                        Mon â€“ Sat Â· 9:00 AM â€“ 6:00 PM IST
                       </p>
                     </div>
                   </div>
                 </div>
               </motion.div>
 
-              {/* RIGHT – FORM */}
+              {/* RIGHT â€“ FORM */}
               <motion.div
                 initial={{ opacity: 0, x: 40 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="bg-black/60 rounded-2xl p-8 lg:p-10 border border-amber-500/20"
+                className="bg-slate-50 rounded-2xl p-8 lg:p-10 border border-slate-200 shadow-sm"
               >
-                <h3 className="font-serif text-2xl font-bold mb-2">
+                <h3 className="font-serif text-2xl font-bold text-[#111111] mb-2">
                   Send Us a Message
                 </h3>
-                <p className="font-sans text-white/50 text-sm mb-6">
+                <p className="font-sans text-slate-500 text-sm mb-6">
                   Fill in the form and we'll get back to you.
                 </p>
 
@@ -202,7 +183,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       placeholder="Your Name *"
-                      className="h-12 bg-black/70 border-amber-500/20 focus:border-amber-400 col-span-2 sm:col-span-1"
+                      className="h-12 bg-white border-slate-300 focus:border-orange-500 col-span-2 sm:col-span-1"
                     />
                     <Input
                       name="email"
@@ -211,7 +192,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       placeholder="Email Address *"
-                      className="h-12 bg-black/70 border-amber-500/20 focus:border-amber-400 col-span-2 sm:col-span-1"
+                      className="h-12 bg-white border-slate-300 focus:border-orange-500 col-span-2 sm:col-span-1"
                     />
                   </div>
 
@@ -221,14 +202,14 @@ const Contact = () => {
                       value={formData.company}
                       onChange={handleChange}
                       placeholder="Company Name"
-                      className="h-12 bg-black/70 border-amber-500/20 focus:border-amber-400 col-span-2 sm:col-span-1"
+                      className="h-12 bg-white border-slate-300 focus:border-orange-500 col-span-2 sm:col-span-1"
                     />
                     <Input
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="Phone Number"
-                      className="h-12 bg-black/70 border-amber-500/20 focus:border-amber-400 col-span-2 sm:col-span-1"
+                      className="h-12 bg-white border-slate-300 focus:border-orange-500 col-span-2 sm:col-span-1"
                     />
                   </div>
 
@@ -239,26 +220,26 @@ const Contact = () => {
                     required
                     rows={5}
                     placeholder="Your Message *"
-                    className="bg-black/70 border-amber-500/20 focus:border-amber-400 resize-none"
+                    className="bg-white border-slate-300 focus:border-orange-500 resize-none"
                   />
 
                   <Button
                     type="submit"
                     size="lg"
                     disabled={isSubmitting}
-                    className="w-full bg-amber-500 hover:bg-amber-400 text-black font-semibold shadow-lg shadow-amber-500/20 disabled:opacity-60"
+                    className="w-full bg-orange-500 hover:bg-orange-400 text-black font-semibold shadow-lg shadow-orange-500/20 disabled:opacity-60"
                   >
                     {isSubmitting ? (
                       <>
                         <span className="mr-2 h-4 w-4 border-2 border-black/40 border-t-black rounded-full animate-spin inline-block" />
-                        Sending…
+                        Sendingâ€¦
                       </>
                     ) : (
                       <>Send Message <Send size={18} className="ml-2" /></>
                     )}
                   </Button>
 
-                  <p className="font-sans text-white/30 text-xs text-center">
+                  <p className="font-sans text-slate-400 text-xs text-center">
                     * Required fields. Your information is kept confidential.
                   </p>
                 </form>

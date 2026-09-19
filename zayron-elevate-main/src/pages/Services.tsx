@@ -1,12 +1,14 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CTASection } from "@/components/home/CTASection";
+import { PageHero } from "@/components/layout/PageHero";
 import {
-  Users,
-  Database,
+  Code2,
   Shield,
   TestTube,
+  Cpu,
+  Users,
   CheckCircle,
   ArrowRight,
 } from "lucide-react";
@@ -14,116 +16,134 @@ import servicesBg from "@/assets/hero-100.jpg";
 
 const services = [
   {
-    id: "staffing",
-    icon: Users,
-    title: "IT & Non-IT Manpower Staffing",
-    subtitle: "Contract & Permanent Hiring Solutions",
+    id: "app-dev",
+    icon: Code2,
+    title: "Application Development",
+    subtitle: "Web, Mobile & Desktop Solutions",
     description:
-      "Access top-tier talent through our comprehensive staffing solutions designed to meet dynamic workforce requirements across industries.",
+      "We design and develop scalable web applications, mobile apps (iOS and Android), and .Exe/desktop applications tailored to business requirements. We also deliver professional website designing services.",
     features: [
-      "Contract & permanent hiring models",
-      "Resource augmentation services",
-      "Domain-specific recruitment expertise",
-      "Pre-screened qualified professionals",
-      "Fast turnaround time",
-      "Flexible engagement options",
+      "Web application development",
+      "Mobile app development (iOS & Android)",
+      ".Exe / desktop application development",
+      "Website designing",
+      "UI/UX design & prototyping",
+      "API development & integration",
     ],
     benefits: [
-      "Reduced hiring cycle time",
-      "Scalable workforce solutions",
-      "Lower recruitment costs",
-      "Reliable talent pipeline",
-    ],
-  },
-  {
-    id: "csv",
-    icon: Shield,
-    title: "Computer System Validation (CSV)",
-    subtitle: "Regulatory & Compliance Services",
-    description:
-      "Ensure regulatory compliance of your computerized systems through structured validation and documentation.",
-    features: [
-      "21 CFR Part 11 & EU Annex 11",
-      "IQ / OQ / PQ documentation",
-      "Risk-based validation",
-      "Data integrity checks",
-      "Audit readiness support",
-      "Compliance gap analysis",
-    ],
-    benefits: [
-      "Regulatory compliance assurance",
-      "Reduced audit risks",
-      "Validated systems",
-      "Improved data integrity",
+      "Scalable, production-ready applications",
+      "Cross-platform compatibility",
+      "Performance-optimized delivery",
+      "End-to-end project ownership",
     ],
   },
   {
     id: "testing",
     icon: TestTube,
-    title: "Manual & Automation Testing",
-    subtitle: "Quality Assurance Services",
+    title: "Testing & Quality Assurance",
+    subtitle: "Manual, Automation & Security Testing",
     description:
-      "Deliver defect-free software through our comprehensive QA and automation testing services.",
+      "Our QA team delivers comprehensive testing services covering manual testing, automation testing, OWASP testing, security testing, and code quality checks — ensuring defect-free, secure software delivery.",
     features: [
-      "Functional & regression testing",
-      "Automation frameworks",
-      "API & integration testing",
-      "Performance testing",
-      "Mobile & web testing",
-      "Test strategy & planning",
+      "Manual testing & test case design",
+      "Automation testing frameworks",
+      "OWASP testing",
+      "Security testing",
+      "Code quality checks",
+      "Code quality certificates",
     ],
     benefits: [
       "Higher product quality",
-      "Faster release cycles",
-      "Reduced production issues",
-      "Cost-efficient QA",
+      "Security vulnerabilities identified early",
+      "Certified code quality assurance",
+      "Faster, confident release cycles",
+    ],
+  },
+  {
+    id: "csv",
+    icon: Shield,
+    title: "CSV & Compliance Services",
+    subtitle: "Regulated Industry Compliance",
+    description:
+      "We deliver Computer System Validation (CSV) activities and deliverables, internal and external audits, gap assessments, and SAP-based activities for IT, Pharma, Power, and Manufacturing industries.",
+    features: [
+      "CSV activities & deliverables",
+      "Internal audits for IT, Pharma, Power & Manufacturing",
+      "External audits",
+      "Gap assessments",
+      "SAP-based activities",
+      "Audit readiness support",
+    ],
+    benefits: [
+      "Regulatory compliance assurance",
+      "Audit-ready documentation",
+      "Reduced compliance risk",
+      "Validated, traceable systems",
+    ],
+  },
+  {
+    id: "ai-products",
+    icon: Cpu,
+    title: "AI Products & Platforms",
+    subtitle: "Internal Enterprise Applications",
+    description:
+      "Our internally built products power enterprise productivity. ZayroDocX offers 50+ AI-integrated tools, ZayroConnect is our advanced HRMS, ZayroDeck enables file sharing, ZayroInvoice manages invoices, and ZayroSuite brings together an AI tools suite.",
+    features: [
+      "ZayroDocX – 50+ AI-integrated tools",
+      "ZayroConnect – Advanced HRMS",
+      "ZayroDeck – File sharing platform",
+      "ZayroInvoice – Invoice management",
+      "ZayroPlay – Internal application",
+      "ZayroSuite – AI tools suite",
+    ],
+    benefits: [
+      "Enterprise-grade AI capabilities",
+      "Seamless product ecosystem",
+      "HRMS for your organization",
+      "Productivity across all departments",
+    ],
+  },
+  {
+    id: "digital",
+    icon: Users,
+    title: "Digital Marketing & Business Services",
+    subtitle: "Growth & Operational Excellence",
+    description:
+      "We deliver digital marketing services to grow your online presence, HRMS implementation for other companies to ISO standards, and comprehensive IT staffing and talent solutions for enterprise needs.",
+    features: [
+      "Digital marketing services",
+      "HRMS services & implementation for other companies",
+      "ISO standards implementation",
+      "IT staffing & talent solutions",
+      "Code quality checks & certificates",
+      "Business process consulting",
+    ],
+    benefits: [
+      "Improved online visibility",
+      "ISO-compliant HR processes",
+      "Qualified talent on demand",
+      "Measurable business outcomes",
     ],
   },
 ];
 
 const Services = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-white text-[#111111]">
       <Navbar />
 
       <main>
-        {/* HERO */}
-        <section className="relative pt-32 pb-24 text-center overflow-hidden">
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${servicesBg})` }}
-          />
-          <div className="absolute inset-0 bg-black/75" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-amber-900/40" />
-
-          <div className="container mx-auto px-4 relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="max-w-3xl mx-auto"
-            >
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                Our Services
-              </h1>
-
-              {/* Gold underline */}
-              <div className="w-20 h-1 bg-amber-400 mx-auto mb-6 rounded-full" />
-
-              <p className="font-sans text-amber-400 text-base md:text-lg mb-4">
-                Premium Solutions for Modern Enterprises
-              </p>
-
-              <p className="font-sans text-white/75 text-base md:text-lg leading-relaxed">
-                Comprehensive IT and business services designed to enable scalability,
-                compliance, and long-term success.
-              </p>
-            </motion.div>
-          </div>
-        </section>
+        <PageHero
+          title="Our Services"
+          subtitle="End-to-End Technology & Business Solutions"
+          description="From AI-powered products and application development to CSV compliance, security testing, and digital marketing — comprehensive services for every enterprise need."
+          bgImage={servicesBg}
+          badge="What We Offer"
+          breadcrumbs={[{ label: "Services" }]}
+        />
 
         {/* SERVICES LIST */}
-        <section className="py-20 lg:py-28 bg-black">
+        <section className="py-20 lg:py-28 bg-white">
           <div className="container mx-auto px-4 lg:px-8 space-y-24">
             {services.map((service, index) => (
               <motion.div
@@ -138,27 +158,27 @@ const Services = () => {
               >
                 {/* LEFT CONTENT */}
                 <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
-                  <div className="w-16 h-16 rounded-2xl bg-amber-500/10 flex items-center justify-center mb-6">
-                    <service.icon className="w-8 h-8 text-amber-400" />
+                  <div className="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center mb-6">
+                    <service.icon className="w-8 h-8 text-orange-600" />
                   </div>
 
-                  <h2 className="font-serif text-3xl md:text-4xl font-bold mb-2">
+                  <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#111111] mb-2">
                     {service.title}
                   </h2>
 
-                  <p className="font-sans text-amber-400 font-medium mb-4">
+                  <p className="font-sans text-orange-600 font-medium mb-4">
                     {service.subtitle}
                   </p>
 
-                  <p className="font-sans text-white/70 text-lg leading-relaxed mb-8">
+                  <p className="font-sans text-slate-600 text-lg leading-relaxed mb-8">
                     {service.description}
                   </p>
 
                   <div className="grid sm:grid-cols-2 gap-3">
                     {service.features.map((feature) => (
                       <div key={feature} className="flex gap-3">
-                        <CheckCircle className="w-5 h-5 text-amber-400 mt-0.5" />
-                        <span className="font-sans text-white/70 text-sm">
+                        <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5" />
+                        <span className="font-sans text-slate-600 text-sm">
                           {feature}
                         </span>
                       </div>
@@ -168,17 +188,17 @@ const Services = () => {
 
                 {/* RIGHT CARD */}
                 <div className={index % 2 === 1 ? "lg:col-start-1" : ""}>
-                  <div className="bg-black/60 border border-amber-500/20 rounded-2xl p-8 lg:p-10">
-                    <h3 className="font-serif text-xl font-bold mb-6">
+                  <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 lg:p-10 shadow-sm">
+                    <h3 className="font-serif text-xl font-bold text-[#111111] mb-6">
                       Business Value
                     </h3>
                     <div className="space-y-4">
                       {service.benefits.map((benefit) => (
                         <div key={benefit} className="flex items-center gap-4">
-                          <div className="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center">
-                            <ArrowRight className="w-4 h-4 text-amber-400" />
+                          <div className="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center">
+                            <ArrowRight className="w-4 h-4 text-orange-600" />
                           </div>
-                          <span className="font-sans text-white/80">
+                          <span className="font-sans text-slate-700">
                             {benefit}
                           </span>
                         </div>
