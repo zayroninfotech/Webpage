@@ -29,9 +29,10 @@ const products = [
     tagline: "Transform Documents\nInto Opportunities",
   },
   {
-    id: "02", image: imgConnect, status: "On Going",
+    id: "02", image: imgConnect, status: "Live",
     category: "HRMS SYSTEM",
     title: "ZayroConnect",
+    url: "https://zayroconnect.tech/",
     description: "Advanced Human Resource Management System built to ISO standards. Handles the full HR lifecycle including employee management, payroll, attendance, compliance, and more.",
     tags: ["HRMS", "ISO Standards", "React", "Enterprise"],
     tagline: "People. Process.\nProgress.",

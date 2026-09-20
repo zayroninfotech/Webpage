@@ -27,7 +27,7 @@ const stats = [
   },
   {
     icon: Award,
-    value: 98,
+    value: 100,
     suffix: "%",
     label: "Client Satisfaction",
     description: "Consistently exceeding expectations",
