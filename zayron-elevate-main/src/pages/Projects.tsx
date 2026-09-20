@@ -1,77 +1,73 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { CTASection } from "@/components/home/CTASection";
-import { PageHero } from "@/components/layout/PageHero";
-import { ExternalLink, Code2, Layers, ShieldCheck, Users, BarChart3, Cpu } from "lucide-react";
-import projectsBg from "@/assets/hero-3.jpg";
+import { Rocket, Settings2, ShieldCheck, BarChart3, ArrowRight } from "lucide-react";
 
-const projects = [
+import heroImg      from "@/assets/projects-hero-new.png";
+import imgDocX      from "@/assets/prod-zayrodocx.png";
+import imgConnect   from "@/assets/prod-zayroconnect.png";
+import imgDeck      from "@/assets/prod-zayrodeck.png";
+import imgInvoice   from "@/assets/prod-zayro-invoice.png";
+import imgPlay      from "@/assets/prod-zayroplay.png";
+import imgSuite     from "@/assets/prod-zayrosuite.png";
+
+const heroStats = [
+  { icon: Rocket,    label: "Innovate", sub: "Faster" },
+  { icon: Settings2, label: "Build",    sub: "Smarter" },
+  { icon: ShieldCheck, label: "Work",   sub: "Securely" },
+  { icon: BarChart3, label: "Achieve",  sub: "More" },
+];
+
+const products = [
   {
-    id: "01",
-    icon: Cpu,
-    category: "AI Tools Platform",
+    id: "01", image: imgDocX, status: "Live",
+    category: "AI TOOLS PLATFORM",
     title: "ZayroDocX",
-    description:
-      "Our flagship AI-integrated tools platform featuring 50+ powerful tools including special AI-based tools. ZayroDocX consolidates advanced AI capabilities for document processing, automation, and intelligent workflows in one platform.",
+    url: "https://zayrodocx.com/",
+    description: "Our flagship AI-integrated tools platform featuring 50+ powerful tools. ZayroDocX consolidates advanced AI capabilities for document processing, automation, and intelligent workflows in one platform.",
     tags: ["AI Integration", "50+ Tools", "Web Platform", "Enterprise"],
-    status: "Live",
-    color: "from-orange-500 to-yellow-400",
+    tagline: "Transform Documents\nInto Opportunities",
   },
   {
-    id: "02",
-    icon: Users,
-    category: "HRMS System",
+    id: "02", image: imgConnect, status: "On Going",
+    category: "HRMS SYSTEM",
     title: "ZayroConnect",
-    description:
-      "Advanced Human Resource Management System built to ISO standards. ZayroConnect handles the full HR lifecycle and is also provided as an HRMS implementation service for other companies — covering employee management, payroll, attendance, and compliance.",
+    description: "Advanced Human Resource Management System built to ISO standards. Handles the full HR lifecycle including employee management, payroll, attendance, compliance, and more.",
     tags: ["HRMS", "ISO Standards", "React", "Enterprise"],
-    status: "Live",
-    color: "from-[#111111] to-indigo-600",
+    tagline: "People. Process.\nProgress.",
   },
   {
-    id: "03",
-    icon: Layers,
-    category: "File Sharing Platform",
+    id: "03", image: imgDeck, status: "On Going",
+    category: "FILE SHARING PLATFORM",
     title: "ZayroDeck",
-    description:
-      "Enterprise-grade secure file sharing platform designed for teams and organizations. ZayroDeck enables controlled document distribution, secure access management, and seamless collaboration across departments.",
+    description: "Enterprise-grade secure file sharing platform designed for teams and organizations. Enables controlled document distribution, secure access management, and seamless collaboration.",
     tags: ["File Sharing", "Security", "Cloud Storage", "Collaboration"],
-    status: "Live",
-    color: "from-slate-700 to-slate-500",
+    tagline: "Secure Sharing\nFor Stronger Teams",
   },
   {
-    id: "04",
-    icon: BarChart3,
-    category: "Invoice Management",
+    id: "04", image: imgInvoice, status: "On Going",
+    category: "INVOICE MANAGEMENT",
     title: "ZayroInvoice",
-    description:
-      "Comprehensive invoice creation and management application for businesses. ZayroInvoice streamlines billing workflows, tracks payment status, generates professional invoices, and provides financial reporting capabilities.",
+    description: "Comprehensive invoice creation and management application for businesses. Streamlines billing workflows, tracks payment status, generates professional invoices, and provides financial reporting.",
     tags: ["Invoicing", "Finance", "Reporting", "Business"],
-    status: "Live",
-    color: "from-green-500 to-emerald-400",
+    tagline: "Billing Made Simple\nFor Growing Businesses",
   },
   {
-    id: "05",
-    icon: Code2,
-    category: "Internal Application",
+    id: "05", image: imgPlay, status: "Live",
+    category: "INTERNAL APPLICATION",
     title: "ZayroPlay",
-    description:
-      "An internally developed application built for operational use within Zayron Infotech. ZayroPlay is part of our growing product ecosystem, demonstrating our in-house software development capability.",
+    url: "https://zayroplay.com/games/",
+    description: "An internally developed application built for operational use within Zayron Infotech. ZayroPlay is part of our growing product ecosystem, demonstrating our in-house software development capability.",
     tags: ["Internal App", "React", "TypeScript", "Enterprise"],
-    status: "Live",
-    color: "from-orange-500 to-red-400",
+    tagline: "Play. Build. Innovate.",
   },
   {
-    id: "06",
-    icon: ShieldCheck,
-    category: "AI Tools Suite",
+    id: "06", image: imgSuite, status: "On Going",
+    category: "AI TOOLS SUITE",
     title: "ZayroSuite",
-    description:
-      "A curated AI tools suite that brings together a collection of powerful artificial intelligence utilities. ZayroSuite complements ZayroDocX, providing specialized AI capabilities for targeted business use cases and workflows.",
+    description: "A curated AI tools suite that brings together a collection of powerful artificial intelligence utilities. Complements ZayroDocX, providing specialized AI capabilities for targeted business use cases.",
     tags: ["AI Suite", "Automation", "Productivity", "Enterprise"],
-    status: "Live",
-    color: "from-pink-500 to-rose-400",
+    tagline: "All Your AI Tools\nIn One Place",
   },
 ];
 
@@ -81,68 +77,190 @@ const Projects = () => {
       <Navbar />
 
       <main>
-        <PageHero
-          title="Our Products &amp;"
-          titleHighlight="Platforms"
-          description="Internally built enterprise applications — from ZayroDocX with 50+ AI tools to ZayroConnect HRMS, ZayroDeck, ZayroInvoice, ZayroPlay, and ZayroSuite."
-          bgImage={projectsBg}
-          badge="Our Products"
-          breadcrumbs={[{ label: "Projects" }]}
-        />
 
-        {/* PROJECTS GRID */}
-        <section className="py-20 lg:py-28 bg-white">
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {projects.map((project, i) => (
-                <motion.div
-                  key={project.id}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="group relative bg-white hover:bg-slate-50 border border-slate-200 hover:border-orange-400/50 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col gap-4"
-                >
-                  {/* Number + Status */}
-                  <div className="flex items-center justify-between">
-                    <span className="font-mono text-slate-300 text-xs">{project.id}</span>
-                    <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full ${project.status === "Live" ? "bg-green-500/15 text-green-400 border border-green-500/25" : "bg-orange-500/15 text-orange-400 border border-orange-500/25"}`}>
-                      {project.status}
+        {/* ── HERO ── */}
+        <section className="relative bg-white overflow-hidden pt-24">
+          <div className="grid lg:grid-cols-2 min-h-[520px] items-stretch">
+
+            {/* LEFT — text */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              className="flex flex-col justify-center px-6 lg:px-16 py-14 lg:py-20"
+            >
+              {/* Badge */}
+              <div className="flex items-center gap-2 mb-5">
+                <span className="w-6 h-px bg-[#E63946]" />
+                <span className="text-[#E63946] text-[10px] font-bold tracking-[0.25em] uppercase">Our Products</span>
+              </div>
+
+              {/* Heading */}
+              <h1 className="font-serif font-bold text-[#111111] leading-[1.08] mb-5"
+                style={{ fontSize: "clamp(2.2rem, 4vw, 3.4rem)" }}>
+                Innovative Products<br />
+                for a <span className="text-[#E63946]">Smarter Tomorrow</span>
+              </h1>
+
+              {/* Description */}
+              <p className="text-slate-500 text-[0.95rem] leading-relaxed mb-8 max-w-[480px]">
+                Internally built enterprise applications — from ZayroDocX with 50+ AI tools
+                to ZayroConnect HRMS, ZayroDeck, ZayroInvoice, ZayroPlay, and ZayroSuite
+                — designed to help businesses work smarter, faster, and grow stronger.
+              </p>
+
+              {/* Stats row */}
+              <div className="flex flex-wrap gap-6">
+                {heroStats.map(({ icon: Icon, label, sub }, i) => (
+                  <motion.div
+                    key={label}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 + i * 0.08, duration: 0.4 }}
+                    className="flex items-center gap-2.5"
+                  >
+                    <Icon className="w-5 h-5 text-[#E63946]" strokeWidth={1.8} />
+                    <span className="text-[#111111] font-bold text-sm leading-tight">
+                      {label}<br />
+                      <span className="text-slate-500 font-normal text-xs">{sub}</span>
                     </span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* RIGHT — hero image full-bleed */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="relative overflow-hidden min-h-[360px]"
+            >
+              <img
+                src={heroImg}
+                alt="Zayron Infotech Products"
+                className="absolute inset-0 w-full h-full object-cover object-center"
+              />
+              {/* fade left edge into white */}
+              <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-white to-transparent pointer-events-none" />
+            </motion.div>
+          </div>
+        </section>
+
+        {/* ── PRODUCT PORTFOLIO ── */}
+        <section className="py-16 lg:py-20 bg-white">
+          <div className="container mx-auto px-4 lg:px-8">
+
+            {/* Section header */}
+            <div className="relative mb-12 text-center">
+              {/* Cursive "Built for Real Impact" — top right */}
+              <div className="absolute top-0 right-0 hidden lg:block">
+                <span className="font-serif italic text-2xl text-[#111111] leading-tight block">
+                  Built for
+                </span>
+                <span className="font-serif italic text-2xl text-[#111111] leading-tight block">
+                  Real Impact
+                </span>
+                <div className="h-[2px] bg-[#E63946] rounded-full mt-1 w-16 ml-auto" />
+              </div>
+
+              <div className="flex items-center justify-center gap-2 mb-3">
+                <span className="w-6 h-px bg-[#E63946]" />
+                <span className="text-[#E63946] text-[10px] font-bold tracking-[0.25em] uppercase">Our Product Portfolio</span>
+                <span className="w-6 h-px bg-[#E63946]" />
+              </div>
+              <h2 className="font-serif text-4xl lg:text-[2.8rem] font-bold text-[#111111] mb-3">
+                Our Products &amp; Platforms
+              </h2>
+              <p className="text-slate-500 text-base max-w-xl mx-auto">
+                Powering businesses with innovative, secure, and scalable digital solutions.
+              </p>
+            </div>
+
+            {/* Products grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {products.map((product, i) => (
+                <motion.div
+                  key={product.id}
+                  initial={{ opacity: 0, y: 28 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.45, delay: i * 0.07 }}
+                  className="group bg-white border border-slate-200 hover:border-[#E63946]/30 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-[#E63946]/8 transition-all duration-400 flex flex-col"
+                >
+                  {/* Product image */}
+                  <div className="relative bg-slate-50 overflow-hidden" style={{ height: "220px" }}>
+                    {/* Number */}
+                    <span className="absolute top-3 left-4 font-mono text-slate-300 text-xs z-10 font-bold">
+                      {product.id}
+                    </span>
+                    {/* Status badge */}
+                    <span className={`absolute top-3 right-4 flex items-center gap-1.5 text-[10px] font-bold bg-white rounded-full px-2.5 py-0.5 z-10 ${
+                      product.status === "Live"
+                        ? "text-green-500 border border-green-200"
+                        : "text-orange-500 border border-orange-200"
+                    }`}>
+                      <span className={`w-1.5 h-1.5 rounded-full animate-pulse ${
+                        product.status === "Live" ? "bg-green-500" : "bg-orange-500"
+                      }`} />
+                      {product.status}
+                    </span>
+                    <img
+                      src={product.image}
+                      alt={product.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover object-center group-hover:scale-[1.04] transition-transform duration-700"
+                    />
                   </div>
 
-                  {/* Icon */}
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${project.color} flex items-center justify-center shrink-0`}>
-                    <project.icon size={22} className="text-black" />
+                  {/* Content */}
+                  <div className="flex flex-col flex-1 p-5">
+                    <p className="text-[#E63946] text-[10px] font-bold tracking-[0.2em] uppercase mb-1">
+                      {product.category}
+                    </p>
+                    <h3 className="font-serif text-[#111111] text-xl font-bold mb-2 group-hover:text-[#E63946] transition-colors duration-300">
+                      {product.title}
+                    </h3>
+                    <p className="text-slate-500 text-sm leading-relaxed mb-4 flex-1">
+                      {product.description}
+                    </p>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-1.5 mb-4">
+                      {product.tags.map((tag) => (
+                        <span key={tag} className="px-2.5 py-0.5 rounded-full bg-slate-100 border border-slate-200 text-slate-500 text-[10px] font-medium">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Footer row: Learn More + tagline */}
+                    <div className="flex items-end justify-between pt-3 border-t border-slate-100">
+                      {product.url ? (
+                        <a
+                          href={product.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1.5 text-[#E63946] font-bold text-sm hover:gap-3 transition-all duration-200"
+                        >
+                          Learn More <ArrowRight size={14} />
+                        </a>
+                      ) : (
+                        <span className="flex items-center gap-1.5 text-slate-300 font-bold text-sm cursor-default">
+                          Learn More <ArrowRight size={14} />
+                        </span>
+                      )}
+                      <p className="text-[#111111] text-[11px] font-bold text-right leading-snug whitespace-pre-line">
+                        {product.tagline}
+                      </p>
+                    </div>
                   </div>
-
-                  {/* Category + Title */}
-                  <div>
-                    <p className="text-orange-600 text-[10px] font-bold tracking-widest uppercase mb-1">{project.category}</p>
-                    <h3 className="font-serif text-[#111111] text-xl font-bold group-hover:text-orange-700 transition-colors">{project.title}</h3>
-                  </div>
-
-                  {/* Description */}
-                  <p className="font-sans text-slate-500 text-sm leading-relaxed flex-1">{project.description}</p>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="px-2.5 py-0.5 rounded-full bg-slate-100 border border-slate-200 text-slate-500 text-[10px] font-medium">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Bottom accent */}
-                  <div className={`absolute bottom-0 left-0 right-0 h-[2px] rounded-b-2xl bg-gradient-to-r ${project.color} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`} />
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        <CTASection />
       </main>
 
       <Footer />

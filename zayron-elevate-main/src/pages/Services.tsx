@@ -1,6 +1,5 @@
 ﻿import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import {
@@ -15,6 +14,9 @@ import {
   Hammer,
   ClipboardList,
   TrendingUp,
+  Settings,
+  Star,
+  Headset,
 } from "lucide-react";
 import servicesHeroImg from "@/assets/services-hero.png";
 import svcAppDev from "@/assets/svc-app-dev.png";
@@ -24,17 +26,19 @@ import svcAi from "@/assets/svc-ai.png";
 import svcDigital from "@/assets/svc-digital.png";
 
 const services: {
-  id: string; icon: React.ElementType; title: string; subtitle: string;
+  id: string; icon: React.ElementType; title: string; titleSuffix: string; subtitle: string;
   description: string; features: string[]; benefits: string[]; image: string;
+  tags: { icon: React.ElementType; label: string }[];
 }[] = [
   {
     id: "app-dev",
     icon: Code2,
     image: svcAppDev,
-    title: "Application Development",
+    title: "Application",
+    titleSuffix: "Development",
     subtitle: "Web, Mobile & Desktop Solutions",
     description:
-      "We design and develop scalable web applications, mobile apps (iOS and Android), and .Exe/desktop applications tailored to business requirements. We also deliver professional website designing services.",
+      "We design and develop scalable web applications, mobile apps (iOS and Android), and .Exe/desktop applications tailored to business requirements. We also deliver professional website designing services to help businesses establish a strong digital presence.",
     features: [
       "Web application development",
       "Mobile app development (iOS & Android)",
@@ -49,97 +53,128 @@ const services: {
       "Performance-optimized delivery",
       "End-to-end project ownership",
     ],
+    tags: [
+      { icon: TrendingUp, label: "Scalable" },
+      { icon: Shield, label: "Secure" },
+      { icon: CheckCircle, label: "Reliable" },
+    ],
   },
   {
     id: "testing",
     icon: TestTube,
     image: svcTesting,
-    title: "Testing & Quality Assurance",
-    subtitle: "Manual, Automation & Security Testing",
+    title: "Testing & Quality",
+    titleSuffix: "Assurance",
+    subtitle: "Quality. Security. Reliability.",
     description:
-      "Our QA team delivers comprehensive testing services covering manual testing, automation testing, OWASP testing, security testing, and code quality checks — ensuring defect-free, secure software delivery.",
+      "We help organizations deliver reliable and secure software through structured QA, functional testing, automation, security assessment, API validation, performance testing, and code-quality practices.",
     features: [
-      "Manual testing & test case design",
-      "Automation testing frameworks",
-      "OWASP testing",
-      "Security testing",
-      "Code quality checks",
-      "Code quality certificates",
+      "Manual & Functional Testing",
+      "Test Automation",
+      "Security Testing",
+      "Performance Testing",
+      "API Testing",
+      "Code Quality & Review",
     ],
     benefits: [
-      "Higher product quality",
-      "Security vulnerabilities identified early",
-      "Certified code quality assurance",
-      "Faster, confident release cycles",
+      "Higher Software Reliability",
+      "Early Risk Detection",
+      "Faster Release Cycles",
+      "Secure & Quality-Focused Delivery",
+    ],
+    tags: [
+      { icon: Cpu, label: "Automated" },
+      { icon: ClipboardList, label: "Thorough" },
+      { icon: CheckCircle, label: "Certified" },
     ],
   },
   {
     id: "csv",
     icon: Shield,
     image: svcCsv,
-    title: "CSV & Compliance Services",
-    subtitle: "Regulated Industry Compliance",
+    title: "CSV & Compliance",
+    titleSuffix: "Services",
+    subtitle: "Computer System Validation & Regulatory Compliance",
     description:
-      "We deliver Computer System Validation (CSV) activities and deliverables, internal and external audits, gap assessments, and SAP-based activities for IT, Pharma, Power, and Manufacturing industries.",
+      "We help regulated organizations validate, assess, and maintain computerized systems through structured CSV, GxP, compliance, audit, and risk-based quality practices — supporting secure, traceable, and audit-ready operations.",
     features: [
-      "CSV activities & deliverables",
-      "Internal audits for IT, Pharma, Power & Manufacturing",
-      "External audits",
-      "Gap assessments",
-      "SAP-based activities",
-      "Audit readiness support",
+      "Computer System Validation (CSV)",
+      "GxP & Regulatory Compliance",
+      "21 CFR Part 11",
+      "GAMP 5 Practices",
+      "Audit & Assessment Services",
+      "Gap Assessments",
+      "SAP & Regulated Systems",
+      "Audit Readiness",
     ],
     benefits: [
-      "Regulatory compliance assurance",
-      "Audit-ready documentation",
-      "Reduced compliance risk",
-      "Validated, traceable systems",
+      "Audit-Ready Documentation",
+      "Reduced Compliance Risk",
+      "Validated & Controlled Systems",
+      "Improved Regulatory Readiness",
+    ],
+    tags: [
+      { icon: Shield, label: "Compliant" },
+      { icon: CheckCircle, label: "Validated" },
+      { icon: ClipboardList, label: "Audited" },
     ],
   },
   {
     id: "ai-products",
     icon: Cpu,
     image: svcAi,
-    title: "AI Products & Platforms",
-    subtitle: "Internal Enterprise Applications",
+    title: "AI Products &",
+    titleSuffix: "Platforms",
+    subtitle: "Our Product Portfolio",
     description:
-      "Our internally built products power enterprise productivity. ZayroDocX offers 50+ AI-integrated tools, ZayroConnect is our advanced HRMS, ZayroDeck enables file sharing, ZayroInvoice manages invoices, and ZayroSuite brings together an AI tools suite.",
+      "We build our own products — not just client solutions. Our growing portfolio of AI-powered platforms and enterprise applications is designed to solve real business challenges across productivity, workforce management, document processing, collaboration, invoicing, and digital operations.",
     features: [
-      "ZayroDocX – 50+ AI-integrated tools",
-      "ZayroConnect – Advanced HRMS",
-      "ZayroDeck – File sharing platform",
-      "ZayroInvoice – Invoice management",
-      "ZayroPlay – Internal application",
-      "ZayroSuite – AI tools suite",
+      "ZayroDocX — AI-powered document & productivity platform",
+      "ZayroConnect — Enterprise HRMS platform",
+      "ZayroDeck — Secure file-sharing & collaboration",
+      "ZayroInvoice — Digital invoicing platform",
+      "ZayroPlay — Digital application platform",
+      "ZayroSuite — Integrated AI tools suite",
     ],
     benefits: [
-      "Enterprise-grade AI capabilities",
-      "Seamless product ecosystem",
-      "HRMS for your organization",
-      "Productivity across all departments",
+      "AI-Powered Innovation",
+      "Connected Product Ecosystem",
+      "Operational Efficiency",
+      "Scalable Digital Solutions",
+    ],
+    tags: [
+      { icon: Cpu, label: "Intelligent" },
+      { icon: Code2, label: "Integrated" },
+      { icon: TrendingUp, label: "Scalable" },
     ],
   },
   {
     id: "digital",
     icon: Users,
     image: svcDigital,
-    title: "Digital Marketing & Business Services",
-    subtitle: "Growth & Operational Excellence",
+    title: "Digital &",
+    titleSuffix: "Business Services",
+    subtitle: "Driving Growth, Efficiency & Business Transformation",
     description:
-      "We deliver digital marketing services to grow your online presence, HRMS implementation for other companies to ISO standards, and comprehensive IT staffing and talent solutions for enterprise needs.",
+      "We help businesses grow, optimize, and transform through digital marketing, HRMS implementation, ISO support, IT staffing, software quality services, and business process consulting.",
     features: [
-      "Digital marketing services",
-      "HRMS services & implementation for other companies",
-      "ISO standards implementation",
-      "IT staffing & talent solutions",
-      "Code quality checks & certificates",
-      "Business process consulting",
+      "Digital Marketing",
+      "HRMS Implementation",
+      "ISO Implementation Support",
+      "IT Staffing & Talent Solutions",
+      "Software Quality Services",
+      "Business Process Consulting",
     ],
     benefits: [
-      "Improved online visibility",
-      "ISO-compliant HR processes",
-      "Qualified talent on demand",
-      "Measurable business outcomes",
+      "Stronger Digital Presence",
+      "Efficient Business Operations",
+      "Access to Skilled Talent",
+      "Process & Quality Improvement",
+    ],
+    tags: [
+      { icon: TrendingUp, label: "Targeted" },
+      { icon: CheckCircle, label: "Measurable" },
+      { icon: ArrowRight, label: "Growth" },
     ],
   },
 ];
@@ -148,16 +183,23 @@ const heroStats = [
   { icon: Lightbulb, label: "Innovate" },
   { icon: Hammer, label: "Build" },
   { icon: Shield, label: "Secure" },
-  { icon: ClipboardList, label: "Comply" },
   { icon: TrendingUp, label: "Grow" },
 ];
 
 const bottomStats = [
-  { value: "50+", label: "Projects Delivered" },
-  { value: "10+", label: "Industry Domains" },
-  { value: "99%", label: "Client Satisfaction" },
-  { value: "End-to-End", label: "Support & Maintenance" },
+  { icon: Users, value: "50+", label: "Projects Delivered" },
+  { icon: Settings, value: "10+", label: "Industry Domains" },
+  { icon: Star, value: "100%", label: "Client Satisfaction" },
+  { icon: Headset, value: "End-to-End", label: "Support & Maintenance" },
 ];
+
+const sectionLabels: Record<string, string> = {
+  "app-dev": "APP DEVELOPMENT",
+  "testing": "QUALITY ASSURANCE",
+  "csv": "COMPLIANCE SERVICES",
+  "ai-products": "AI PRODUCTS",
+  "digital": "BUSINESS SERVICES",
+};
 
 const Services = () => {
   return (
@@ -168,7 +210,7 @@ const Services = () => {
         {/* ── HERO ── */}
         <section className="relative bg-white overflow-hidden pt-24 pb-0">
           <div className="container mx-auto px-4 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center py-4 lg:py-6">
+            <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-start py-4 lg:py-6">
 
               {/* LEFT — text */}
               <motion.div
@@ -178,7 +220,8 @@ const Services = () => {
                 className="flex flex-col gap-3"
               >
                 {/* Badge */}
-                <div className="inline-flex items-center gap-2 self-start px-3 py-1 rounded-sm bg-transparent text-[#E63946] text-[11px] tracking-[0.22em] uppercase font-bold border-0">
+                <div className="inline-flex items-center gap-2 self-start py-1 bg-transparent text-[#E63946] text-[11px] tracking-[0.22em] uppercase font-bold">
+                  <div className="w-6 h-0.5 bg-[#E63946]" />
                   What We Offer
                 </div>
 
@@ -188,30 +231,14 @@ const Services = () => {
                 </h1>
 
                 {/* Subtitle */}
-                <p className="text-[#111111] font-black uppercase tracking-widest text-xs lg:text-sm -mt-1">
-                  End-to-End Technology &amp; Business Solutions
+                <p className="text-slate-700 font-semibold text-sm lg:text-base -mt-1">
+                  Technology Solutions Built for Business
                 </p>
 
                 {/* Description */}
                 <p className="font-sans text-slate-500 text-sm lg:text-base leading-relaxed max-w-xl">
-                  From AI-powered products and application development to CSV compliance, security testing, and digital marketing — comprehensive services for every enterprise need.
+                  From AI-powered products and application development to CSV compliance, security testing, and digital marketing — we deliver end-to-end technology and business solutions to help organizations innovate, streamline operations, and achieve sustainable growth.
                 </p>
-
-                {/* CTA buttons */}
-                <div className="flex flex-wrap gap-3">
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#E63946] text-white font-semibold rounded-full text-sm hover:bg-[#c9182f] transition-colors shadow-md shadow-[#E63946]/25"
-                  >
-                    Get Started <ArrowRight size={15} />
-                  </Link>
-                  <a
-                    href="#services-list"
-                    className="inline-flex items-center gap-2 px-6 py-2.5 border-2 border-[#111111] text-[#111111] font-semibold rounded-full text-sm hover:bg-[#111111] hover:text-white transition-colors"
-                  >
-                    Explore Services
-                  </a>
-                </div>
 
                 {/* Icon stats row */}
                 <div className="flex flex-wrap gap-4 pt-1">
@@ -224,33 +251,22 @@ const Services = () => {
                 </div>
               </motion.div>
 
-              {/* RIGHT — image */}
+              {/* RIGHT — hero image */}
               <motion.div
                 initial={{ opacity: 0, x: 40 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
                 className="relative"
               >
-                {/* Handwriting-style overlay label */}
-                <motion.div
-                  initial={{ opacity: 0, y: -8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.55, duration: 0.5 }}
-                  className="absolute top-3 right-3 z-10 text-right"
-                >
-                  <p style={{ fontFamily: "'Dancing Script', 'Brush Script MT', cursive", fontSize: 16, color: "#111111", lineHeight: 1.3, fontWeight: 700 }}>
-                    Technology<br />for a<br />Better<br />Tomorrow
-                  </p>
-                  <div className="w-12 h-[2px] bg-[#E63946] rounded-full mt-1 ml-auto" />
-                </motion.div>
-
-                <div className="relative rounded-xl overflow-hidden shadow-lg">
+                <div className="rounded-2xl overflow-hidden shadow-xl shadow-slate-200/60 ring-1 ring-slate-200/40">
                   <img
                     src={servicesHeroImg}
-                    alt="Ideas Build Better Businesses"
-                    className="w-full h-auto object-cover"
+                    alt="Transform Ideas Into Impact"
+                    className="w-full h-auto block"
                   />
                 </div>
+                {/* Decorative red accent line */}
+                <div className="absolute -bottom-2 left-6 right-6 h-1 bg-gradient-to-r from-transparent via-[#E63946]/60 to-transparent rounded-full blur-sm" />
               </motion.div>
             </div>
           </div>
@@ -260,18 +276,25 @@ const Services = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="bg-[#111111] py-4"
+            className="bg-[#F5F5F3] border-t border-b border-slate-200 py-6"
           >
             <div className="container mx-auto px-4 lg:px-8">
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-white/10">
-                {bottomStats.map(({ value, label }) => (
-                  <div key={label} className="flex items-center gap-3 lg:px-8 first:lg:pl-0 last:lg:pr-0">
-                    <div className="w-1 h-8 bg-[#E63946] rounded-full flex-shrink-0" />
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-slate-300">
+                {bottomStats.map(({ icon: Icon, value, label }, i) => (
+                  <motion.div
+                    key={label}
+                    initial={{ opacity: 0, y: 14 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.45, delay: i * 0.08 }}
+                    className="flex items-center gap-3.5 lg:px-8 first:lg:pl-0 last:lg:pr-0"
+                  >
+                    <Icon size={30} strokeWidth={1.6} className="text-[#E63946] flex-shrink-0" />
                     <div>
-                      <p className="text-white font-bold text-lg leading-none">{value}</p>
-                      <p className="text-white/50 text-xs mt-0.5">{label}</p>
+                      <p className="text-[#111111] font-bold text-2xl leading-none tracking-tight">{value}</p>
+                      <p className="text-slate-500 text-xs mt-1.5 font-medium">{label}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -279,93 +302,90 @@ const Services = () => {
         </section>
 
         {/* SERVICES LIST */}
-        <section id="services-list" className="py-14 lg:py-20 bg-white">
-          <div className="container mx-auto px-4 lg:px-8 space-y-14 lg:space-y-16">
-            {services.map((service, index) => (
+        <section id="services-list" className="bg-white">
+          <div className="container mx-auto px-4 lg:px-8">
+            {services.map((service, index) => {
+              const imageLeft = index % 2 === 0;
+              return (
               <motion.div
                 key={service.id}
-                initial={{ opacity: 0, y: 32 }}
+                initial={{ opacity: 0, y: 36 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.55 }}
-                className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch ${
-                  index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                className={`grid lg:grid-cols-2 gap-0 items-stretch ${
+                  index !== services.length - 1 ? "border-b border-slate-100" : ""
                 }`}
               >
-                {/* CONTENT SIDE */}
-                <div className={`flex flex-col ${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
-                  {/* Icon */}
+                {/* PHOTO — full-bleed, no card */}
+                <div className={`relative min-h-[260px] lg:min-h-0 overflow-hidden ${imageLeft ? "lg:order-1" : "lg:order-2"}`}>
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover object-center"
+                  />
+                  {imageLeft && (
+                    <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-white to-transparent pointer-events-none" />
+                  )}
+                  {!imageLeft && (
+                    <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-white to-transparent pointer-events-none" />
+                  )}
+                </div>
+
+                {/* CONTENT — floating on white */}
+                <div className={`flex flex-col justify-center py-8 lg:py-10 ${
+                  imageLeft
+                    ? "lg:order-2 px-6 lg:px-12"
+                    : "lg:order-1 px-6 lg:px-12"
+                }`}>
+                  {/* Number + icon + label */}
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-11 h-11 rounded-xl bg-[#E63946] flex items-center justify-center shadow-md shadow-[#E63946]/30">
-                      <service.icon className="w-5 h-5 text-white" />
+                    <span className="font-serif text-4xl font-bold text-slate-100 select-none leading-none flex-shrink-0">
+                      0{index + 1}
+                    </span>
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#E63946] to-[#B91C2E] flex items-center justify-center shadow-md shadow-[#E63946]/25 flex-shrink-0">
+                      <service.icon className="w-5 h-5 text-white" strokeWidth={1.75} />
                     </div>
-                    <div className="h-px flex-1 bg-gradient-to-r from-[#E63946]/40 to-transparent" />
+                    <div className="flex items-center gap-2">
+                      <div className="h-px w-5 bg-[#E63946]" />
+                      <span className="text-[#E63946] text-[10px] tracking-[0.2em] uppercase font-bold">
+                        {sectionLabels[service.id] ?? "OUR SERVICES"}
+                      </span>
+                    </div>
                   </div>
 
-                  <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#111111] mb-1">
-                    {service.title}
+                  <h2 className="font-serif text-2xl md:text-3xl lg:text-[2rem] font-bold text-[#111111] leading-[1.15] mb-1">
+                    {service.title} <span className="text-[#E63946]">{service.titleSuffix}</span>
                   </h2>
 
-                  <p className="text-[#E63946] font-semibold text-sm mb-1">
+                  <p className="text-[#E63946] font-semibold text-xs mb-1.5">
                     {service.subtitle}
                   </p>
 
-                  <div className="w-10 h-[2px] bg-[#E63946] rounded-full mb-4" />
+                  <div className="w-7 h-[2px] bg-[#E63946] rounded-full mb-3" />
 
-                  <p className="font-sans text-slate-600 text-sm lg:text-base leading-relaxed mb-5">
+                  <p className="font-sans text-slate-500 text-sm leading-relaxed mb-4 max-w-md">
                     {service.description}
                   </p>
 
-                  <div className="grid sm:grid-cols-2 gap-2">
-                    {service.features.map((feature) => (
-                      <div key={feature} className="flex gap-2.5 items-start">
-                        <CheckCircle className="w-4 h-4 text-[#E63946] mt-0.5 flex-shrink-0" />
-                        <span className="font-sans text-slate-600 text-sm leading-snug">
+                  <div className="grid sm:grid-cols-2 gap-1">
+                    {service.features.slice(0, 6).map((feature) => (
+                      <div
+                        key={feature}
+                        className="group flex gap-2 items-center bg-[#F5F5F3] hover:bg-[#FFF0F1] border border-transparent hover:border-[#E63946]/20 transition-all duration-300 rounded-lg px-3 py-1.5"
+                      >
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#E63946] flex-shrink-0 group-hover:scale-125 transition-transform duration-300" />
+                        <span className="font-sans text-slate-600 text-xs leading-snug font-medium">
                           {feature}
                         </span>
                       </div>
                     ))}
                   </div>
                 </div>
-
-                {/* BUSINESS VALUE — photo card with overlay */}
-                <div className={index % 2 === 1 ? "lg:col-start-1" : ""}>
-                  <div className="relative rounded-2xl overflow-hidden min-h-[300px] h-full">
-                    {/* Photo */}
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                    {/* Dark gradient overlay — heavier at bottom */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/95 via-[#111111]/50 to-[#111111]/10" />
-
-                    {/* Content */}
-                    <div className="relative z-10 flex flex-col justify-end h-full p-6 min-h-[300px]">
-                      <div className="flex items-center gap-2 mb-4">
-                        <div className="w-6 h-6 rounded-md bg-[#E63946] flex items-center justify-center flex-shrink-0">
-                          <ArrowRight className="w-3 h-3 text-white" />
-                        </div>
-                        <h3 className="font-serif text-base font-bold text-white">
-                          Business Value
-                        </h3>
-                      </div>
-
-                      <div className="space-y-2.5">
-                        {service.benefits.map((benefit) => (
-                          <div key={benefit} className="flex items-start gap-2.5">
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#E63946] flex-shrink-0 mt-1.5" />
-                            <span className="font-sans text-white/90 text-sm leading-snug">
-                              {benefit}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </motion.div>
-            ))}
+              );
+            })}
           </div>
         </section>
 

@@ -27,15 +27,6 @@ export const CTASection = () => {
             transition={{ duration: 0.6 }}
             className="py-16 lg:py-20 pr-10 flex flex-col justify-center"
           >
-            {/* Label */}
-            <div className="flex items-center gap-3 mb-5">
-              <span className="w-6 h-px bg-red-500" />
-              <span className="text-[10px] font-bold tracking-[0.28em] uppercase text-slate-500">
-                Let's Work Together
-              </span>
-              <span className="w-6 h-px bg-red-500" />
-            </div>
-
             {/* Heading */}
             <h2 className="font-bold text-[#111111] leading-[1.1] mb-5"
               style={{ fontSize: "clamp(1.9rem, 3.5vw, 3rem)" }}>
