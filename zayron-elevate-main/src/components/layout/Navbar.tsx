@@ -40,7 +40,7 @@ export const Navbar = () => {
         className="fixed top-0 left-0 right-0 z-50"
       >
         {/* Top accent bar */}
-        <div className="h-[2px] w-full bg-gradient-to-r from-[#111111] via-orange-500 to-[#111111]" />
+        <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#E63946] to-transparent" />
 
         <div
           className={cn(
@@ -100,7 +100,7 @@ export const Navbar = () => {
                         )}
                         <span className={cn(
                           "relative z-10 flex items-center gap-1.5 transition-colors duration-200",
-                          isActive ? "text-white font-bold" : "text-[#111111] hover:text-orange-500"
+                          isActive ? "text-white font-bold" : "text-slate-400 hover:text-[#E63946]"
                         )}>
                           {Icon && <Icon size={12} strokeWidth={2.5} />}
                           {link.name}
@@ -116,7 +116,7 @@ export const Navbar = () => {
                 <motion.span
                   whileHover={{ scale: 1.04, y: -1 }}
                   whileTap={{ scale: 0.97 }}
-                  className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-red-600 to-orange-500 text-white text-[12px] font-bold shadow-md shadow-orange-500/25 hover:shadow-orange-500/40 transition-shadow duration-200 cursor-pointer"
+                  className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#E63946] hover:bg-[#c62f3b] text-white text-[12px] font-bold shadow-md shadow-[#E63946]/25 transition-all duration-200 cursor-pointer"
                 >
                   <Send size={12} strokeWidth={2.5} />
                   Get In Touch
@@ -173,8 +173,8 @@ export const Navbar = () => {
                           className={cn(
                             "flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-all",
                             isActive
-                              ? "bg-gradient-to-r from-red-50 to-orange-50 text-red-600 border border-red-200"
-                              : "text-[#111111] hover:bg-slate-50 hover:text-orange-500"
+                              ? "bg-red-50 text-[#E63946] border border-red-100"
+                              : "text-slate-400 hover:bg-slate-50 hover:text-[#E63946]"
                           )}
                         >
                           <span className="flex items-center gap-2.5">
@@ -200,7 +200,7 @@ export const Navbar = () => {
                   </a>
                   <a
                     href="mailto:info@zayron.in"
-                    className="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gradient-to-r from-red-600 to-orange-500 text-white text-xs font-bold hover:opacity-90 transition-all"
+                    className="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[#E63946] hover:bg-[#c62f3b] text-white text-xs font-bold transition-all"
                   >
                     <Mail size={12} /> Email Us
                   </a>
